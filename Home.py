@@ -24,6 +24,10 @@ def mrtTiming():
 def at():
     return render_template('alternative_transport.html')
 
+@app.route('/mc')
+def mc():
+    return render_template('MrtCrowded.html')
+
 if __name__ == '__main__':
     app.secret_key = 'secret123'
     app.run()
