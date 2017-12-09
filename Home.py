@@ -20,6 +20,11 @@ def home():
 def mrtTiming():
     return render_template('mrtTiming.html')
 
+@app.route('/my-link/')
+def my_link():
+    print('I got clicked!')
+    return 'Click.'
+
 @app.route('/at/')
 def at():
     return render_template('alternative_transport.html')
