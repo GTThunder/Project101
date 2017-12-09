@@ -33,49 +33,38 @@ class Question:
 
 
 q1 = Question('Actions:', 'Give Seat to Elderly.', 'Pretend nothing is going on.', 'Call friend to give up seat.')
-q2_1 = Question("Actions:", "Investigator", "","")
-q2_2 = Question("Actions:", "Investigator", "","")
-q2_3 = Question("Actions:", "Investigator", "","")
+q2 = Question("Actions:", "Investigator", "","")
+q3 = Question("Actions:", "Check if elderly woman is fine.", "Do Nothing.", "Get friend to check if elderly woman is ok.")
+q4 = Question("Actions:", "Investigator", "","")
 
-list1 = [q1.get_q(), q2_1.get_q(), q2_2.get_q(), q2_3.get_q(), ]
-list2 = [q1.get_a1(), q1.get_a2(), q1.get_a3()]
-list3 = [q1.get_a1(), q2_1.get_a1(), q2_2.get_a1(), q2_3.get_a1()]
+questionList = [q1.get_q(), q2.get_q(), q3.get_q(), q4.get_q()]
+choice1List = [q1.get_a1(), q1.get_a2(), q1.get_a3()]
+choice2List = [q2.get_a1(), q2.get_a2(), q2.get_a3()]
+choice3List = [q3.get_a1(), q3.get_a2(), q3.get_a3()]
+choice4List = [q4.get_a1(), q4.get_a2(), q4.get_a3()]
 Game = 1
+Score = 0
 for x in range(Game):
     print("Welcome to MrtGuide!")
-    print("This is a game where every action will lead to different situations")
+    print("This is a game to educate on what we should do in the MRT")
     name = input("Enter your name to start: ")
-    print(name, "and his friend was in the mrt waiting for his friend to come")
-    print("Upon arriving at Yio Chu Kang MRT, an elderly boarded the MRT however, there was no seats avaliable.")
-    print(list1[0])
-    print('1.{} 2.{} 3.{}'.format(list2[0], list2[1], list2[2]))
-    while True:
-        choice1 = input("Choice(1-3): ")
-        if choice1 == 1:
-            break
-        elif choice1 == 2:
-            break
-        elif choice1 == 3:
-            break
-        else:
-            print('Invalid Choice please try again:')
-
-
-
-'''
-i=0
-s=0
-while i<3:
-    i+=1
-    num = random.randint(0, 4)
-    q = Quiz.questions[num]
-    print(q.get_q())
-    Answer = input("Answer: ")
-    if Answer.upper() == q.get_a():
-        s+=1
-        print("Congratulations you are correct! Score: ", s)
+    print("You and your friend was in the mrt waiting for his friend to come")
+    print("Upon arriving at Yio Chu Kang MRT, an elderly woman boarded the MRT however, there was no seats avaliable.")
+    print("But by chance, you have a seat avaliable. What will you do?")
+    print(questionList[0])
+    print('1.{} 2.{} 3.{}'.format(choice1List[0], choice1List[1], choice1List[2]))
+    choice1 = int(input("Choice(1-3): "))
+    if choice1 == 1:
+        print("Congratulations that is a right move to make.")
+        print("By allowing the eldery to have a seat it minimises the chance of them")
+        print("injuring themselves, example if the Mrt suddenly stops they may fall and")
+        print("take a long while to recover.")
+    elif choice1 == 2:
+        print("Orh Oh Wrong Answer.")
+        print("By allowing the eldery to have a seat it minimises the chance of them")
+        print("injuring themselves, example if the Mrt suddenly stops they may fall and")
+        print("take a long while to recover.")
+    elif choice1 == 3:
+        print("Hi my name is yeri")
     else:
-        print("Orh oh Wrong Answer. Score: ", s)
-
-print("Thanks for playing!")
-'''
+        print('Invalid Choice please try again:')
