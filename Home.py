@@ -20,9 +20,18 @@ def home():
 def mrtTiming():
     return render_template('mrtTiming.html')
 
+@app.route('/my-link/')
+def my_link():
+    print('I got clicked!')
+    return 'Click.'
+
 @app.route('/at/')
 def at():
     return render_template('alternative_transport.html')
+
+@app.route('/mc')
+def mc():
+    return render_template('MrtCrowded.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
