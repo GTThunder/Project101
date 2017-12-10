@@ -18,11 +18,11 @@ def home():
 
 @app.route('/mt/')
 def mt():
-    return render_template('mrtTiming.html')
+    return render_template('/Daryl/mrtTiming.html')
 
 @app.route('/at/')
 def at():
-    return render_template('alternative_transport.html')
+    return render_template('/Daryl/alternative_transport.html')
 
 @app.route('/mc/')
 def mc():
