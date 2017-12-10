@@ -38,9 +38,7 @@ def routes():
 
 @app.route('/my-link/')
 def my_link():
-  print('I got clicked!')
-
-  return 'Click.'
+  return render_template('/MunHong/MrtCrowdedFunction.py')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
