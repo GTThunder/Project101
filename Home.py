@@ -18,11 +18,11 @@ def home():
 
 @app.route('/mt/')
 def mt():
-    return render_template('mrtTiming.html')
+    return render_template('/Daryl/mrtTiming.html')
 
 @app.route('/at/')
 def at():
-    return render_template('alternative_transport.html')
+    return render_template('/Daryl/alternative_transport.html')
 
 @app.route('/mc/')
 def mc():
@@ -38,9 +38,7 @@ def routes():
 
 @app.route('/my-link/')
 def my_link():
-  print('I got clicked!')
-
-  return 'Click.'
+  return render_template('/MunHong/MrtCrowdedFunction.py')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
