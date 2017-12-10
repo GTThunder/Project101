@@ -1,0 +1,32 @@
+.row{
+	color: #3A4645  ;
+	border: 1px solid black;
+	padding: 20px;
+	margin: 20px;
+	background-color: peachpuff;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+th{
+	background-color: orange;
+	text-align: center;
+}
+td ul{
+	list-style-type: square;
+	float: left;
+}
+table, th, td{
+	border: 1px dashed black;
+	border-collapse: collapse;
+}
+th, td{
+	width: 200px;
+	padding: 5px;
+}
+table{
+	width: 600px;
+	margin: auto;
+}
