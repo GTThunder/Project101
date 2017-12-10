@@ -1,0 +1,279 @@
+#wrapper {
+	width:800px;
+	margin-left:10px;
+}
+select, input {
+font-family: Arial, Helvetica, sans-serif; font-size: 12px;
+}
+
+#searchHeader {
+	font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold ; color: #cc0000;; font-style: normal;
+}
+
+.warn {
+	font-family: Arial, Helvetica, sans-serif; font-size: 12px; color:#ff0000; font-weight:bold;
+}
+
+.svcColor1 {
+	background-color:#8B008B;
+	color:#ffffff;
+	display:inline;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+.svcColor1 a {
+	background-color:#8B008B;
+	color:#ffffff;
+	font-weight:bold;
+	text-align:center;
+	padding-left:6px;
+	padding-right:6px;
+	display:inline-block;
+	width:30px;
+	text-decoration:none;
+}
+
+/*.svcColor1 a.svcNum {
+	color:#ffffff;
+}
+
+.svcColor1 a.svcNum:visited {
+	color:#ffffff;
+}
+
+.svcColor2 {
+	background-color:#FF0000;
+	display:inline;
+	color:#ffffff;
+	font-weight:bold;
+	padding-top:3px;
+	padding-bottom:3px;
+	width:50px;
+}
+
+.svcColor2 a {
+	background-color:#FF0000;
+	color:#ffffff;
+	text-align:center;
+	padding-left:6px;
+	padding-right:6px;
+	display:inline-block;
+	width:30px;
+	text-decoration:none;
+
+}
+*/
+/*for new operator*/
+/*.svcColor3 {
+	background-color:#003399;
+	display:inline;
+	color:#ffffff;
+	font-weight:bold;
+	padding-top:3px;
+	padding-bottom:3px;
+	width:50px;
+}
+
+.svcColor3 a {
+	background-color:#003399;
+	color:#ffffff;
+	text-align:center;
+	padding-left:6px;
+	padding-right:6px;
+	display:inline-block;
+	width:30px;
+	text-decoration:none;
+}
+*/
+/*HS201605 HS20160802 - removed color*/
+.svcColor {
+	display:inline;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+.svcColor a {
+	font-weight:bold;
+	text-align:center;
+	padding-left:6px;
+	padding-right:6px;
+	display:inline-block;
+	width:30px;
+	text-decoration:none;
+}
+
+
+
+.eguide-table td.data {
+    margin: 0;
+    padding: 7px;
+    border-width: 1px 1px 0 0;
+	text-align: left;
+	vertical-align:top;
+}
+
+.eguide-table td.data a {
+    color: #000000;
+}
+
+/* HS20120919 - for bscode display centralized */
+.eguide-table td.data_center {
+    margin: 0;
+    padding: 7px;
+    border-width: 1px 1px 0 0;
+	text-align: center;
+	vertical-align:top;
+}
+
+.eguide-table td.data_center a {
+    color: #000000;
+}
+
+
+
+#Content-eservice  a.svcNum {
+	text-decoration:none;
+	color:#Fff;
+}
+
+#railColorEW, #railColorCG {
+	 background-color:#00aa00;
+	 color:#fff;
+	 font-weight:bold;
+	 padding:2px;
+	 padding-left:4px;
+	 padding-right:4px;
+	 text-align:center;
+	 /* display:block; */
+	 display:inline-block;
+	 width:35px;
+}
+
+#railColorNS {
+ 	background-color:#ff0000;
+	padding:2px;
+	color:#fff;
+	font-weight:bold;
+	padding-left:4px;
+	padding-right:4px;
+	text-align:center;
+    /* display:block; */
+	display:inline-block;
+	width:35px;
+}
+
+#railColorNE {
+ 	background-color:#8B008B;
+	padding:2px;
+	color:#fff;
+	font-weight:bold;
+	padding-left:4px;
+	padding-right:4px;
+	text-align:center;
+	/* display:block; */
+	display:inline-block;
+	width:35px;
+}
+
+#railColorBP, #railColorSE, #railColorPG , #railColorPE , #railColorPW, #railColorSW, #railColorPT, #railColorST {
+ 	background-color:#808080;
+	padding:2px;
+	color:#fff;
+	font-weight:bold;
+	padding-left:4px;
+	padding-right:4px;
+	text-align:center;
+	/* display:block; */
+	display:inline-block;
+	width:35px;
+}
+
+#railColorCC, #railColorCE {
+ 	background-color:#FFA500;
+	padding:2px;
+	color:#fff;
+	font-weight:bold;
+	padding-left:4px;
+	padding-right:4px;
+	text-align:center;
+	/* display:block; */
+	display:inline-block;
+	width:35px;
+}
+
+/* For Downtown Line MRT*/
+#railColorDT {
+ 	background-color:#0067B2;
+	padding:2px;
+	color:#fff;
+	font-weight:bold;
+	padding-left:4px;
+	padding-right:4px;
+	text-align:center;
+	/* display:block; */
+	display:inline-block;
+	width:35px;
+}
+
+
+/* HS */
+tr.rail_head {background:#AAA; color:#FFF; font-weight:bold; text-align:center;}
+td.rail_b1 {border-right: #909090 1px solid; border-bottom: #909090 1px solid; border-top: #909090 1px solid;}
+
+td.rail_b {border: #909090 1px solid;}
+td.rail_b2 {border-bottom: #909090 1px solid; border-left: #909090 1px solid;}
+td.rail_b3 {border-bottom: #909090 1px solid; border-right: #909090 1px solid;}
+
+.app_form {background:#FFFFFF; padding:6px;}
+
+.form_header {font-weight:bold; font-size:1.3em; text-transform:uppercase; color:#AA0000;}
+
+span.form_header2 {font-weight:bold; font-size:1.2em; color:#444444;}
+
+span.form_label {font-weight:bold;}
+
+td.highlight {background:#DDDDDD; color:#003399; padding:6px;}
+td.highlight2 {background:#EEEEEE; color:#333333;}
+
+td.highlight3 {background:#CCCCCC; color:#333333;}
+
+/* //input, textarea, select {border:#A7CCE6 1px solid; font-size:12px;}*/
+
+.large {width:400px;}
+
+.small_red {color:#CC0000; font-size:0.8em; padding-top:3px;}
+.small_text {font-size:0.8em;}
+
+tr.trhead td {font-weight:bold;}
+
+.card_bg {background-image:url('../imgs/card_bg.gif');}
+
+.card_head {font-weight:bold; font-size:16px;}
+.card_text {font-weight:bold; font-size:12px;}
+
+.captcha {font-size:2.5em; font-weight:bold; color:#003399; font-style:italic; padding:	px; }
+
+.text {text-align:justify;/*text-align:justify;*/}
+
+.button {background:#C0C0C0; color:#000000; padding:3px;}
+
+/* Agreement to T&C */
+ul.agree {
+	list-style: none;
+	background: none;
+	padding: 0;
+}
+
+li.agree1 {
+	padding: 3px;
+	width: 30px;
+	font-weight:bold;
+}
+
+li.agree2 {
+	padding: 3px;
+	width: 738px;
+}
+
+.super {vertical-align: super; font-size:10px;}
