@@ -17,7 +17,7 @@ def home():
     return render_template('home.html')
 
 @app.route('/mt/')
-def mrtTiming():
+def mt():
     return render_template('mrtTiming.html')
 
 @app.route('/at/')
@@ -32,11 +32,16 @@ def mc():
 def mh():
     return render_template('/MunHong/MrtHappy.html')
 
+@app.route('/routes/')
+def routes():
+    return render_template('MRT_Routes.html')
+
 @app.route('/my-link/')
 def my_link():
   print('I got clicked!')
 
   return 'Click.'
+
 if __name__ == '__main__':
     app.secret_key = 'secret123'
     app.run()
