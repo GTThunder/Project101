@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-
 	<!-- bootstrap content -->
   <link rel="stylesheet" href="/static/css/bootstrap.min.css">
   <script src="/static/js/jquery.slim.min.js"></script>
@@ -37,7 +35,10 @@
 				<li class="nav-item active"><a class="nav-link" href="#Home" style="color: #00FF00;">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="#Mrt Timing" style="color: #00FF00;">MRT Timing & Exits</a></li>
 				<li class="nav-item"><a class="nav-link" href="#MRT Route" style="color: #00FF00;">MRT Routes</a></li>
-				<li class="nav-item"><a class="nav-link" href="#Mrt Details" style="color: #00FF00;">MRT Sensor</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMrtSensor/EthicsLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MRT Sensor/Ethics</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMrtSensor/EthicsLink">
+					<a class="dropdown-item" href="/templates/MunHong/MrtCrowded.html">MRT Sensor</a>
+					<a class="dropdown-item" href="/templates/MunHong/MrtHappy.html">MRT Ethics</a>
 				<li class="nav-item"><a class="nav-link" href="#Mrt Details" style="color: #00FF00;">MRT Status</a></li>
 				<li class="nav-item"><a class="nav-link" href="#Public Transportation" style="color: #00FF00;">Public Transportation</a></li>
 				<li class="nav-item"><a class="nav-link" href="#Mrt Details" style="color: #00FF00;">Feedback</a></li>
@@ -72,7 +73,7 @@
 	</ul>
 </div>
 <br/>
-<div class="row">
+<div style="text-align: center " class="row">
     <div class="col-md-4">
         <img src="/static/images/" style="width:200px;height:200px;"/>
     <h1>MRT Schedule</h1>
