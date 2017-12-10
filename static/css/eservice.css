@@ -1,0 +1,407 @@
+/* Title: Transit Link */
+
+/* Main */
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+html, body, select, input, textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #4f4f4f;
+}
+
+img {
+	border: none;
+}
+
+.inputfield {
+	border: #999 1px solid;
+}
+
+
+/* Content */
+#Content-eservice {
+	width:800px;
+	margin: 0 auto;
+	padding: 20px;
+	/*background-color: #f2f2f2;*/
+	background-color: #fff;
+	min-height: 440px;
+}
+
+#Content-eservice h1 {
+	margin: 0;
+	padding-bottom: 0px;
+}
+
+#Content-eservice h2 {
+	padding: 10px 0;
+	border-bottom: #DDD 1px solid;
+	text-transform: uppercase;
+}
+
+#Content-eservice h3.busservice {
+	color: #083a81;
+	font-size: 16px;
+}
+
+#Content-eservice .distance {
+	color: #083a81;
+}
+
+#Content-eservice a {
+	text-decoration:none;
+	color:#F00;
+}
+#Content-eservice a:hover {
+	color:#083a81;
+}
+
+.eguide-table td.subhead,
+.moe td.subhead {
+	color: #FFF;
+	font-weight: bold;
+	background-color: #AAA;
+}
+
+.eguide-table td.subhead2,
+.moe td.subhead2 {
+	font-weight: bold;
+	background-color: #DDD;
+	height: 27px;
+}
+
+ul {
+	overflow: hidden;
+}
+
+/* eguide */
+dl.eguide  {
+	margin: 0 0 2px 0;
+}
+
+dl.eguide dt {
+	float: left;
+	padding: 10px;
+	width: 180px;
+	background: #e0e0e0;
+}
+
+dl.eguide dd {
+	margin-left: 120px;
+	padding: 8px;
+	width: 410px;
+	background: #C8C8C8;
+}
+
+dl.eguide dd select {
+	width: 200px;
+}
+
+.eguide-table table, .eguide-table td {
+    border-color: #909090;
+    border-style: solid;
+}
+
+.eguide-table table {
+    border-width: 0 0 1px 1px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.eguide-table td {
+    margin: 0;
+    padding: 4px;
+    border-width: 1px 1px 0 0;
+	text-align: center;
+}
+
+.eguide-table td h1 {
+    margin: 0;
+    padding: 0;
+	font-size: 38px;
+}
+
+.eguide-table td.company {
+	font-size: 16px;
+	color: #FFF;
+	font-weight: bold;
+	background-color: #8B008B;
+}
+
+.eguide-table .route {
+	text-align: left;
+}
+
+select.select_box {
+	width: 350px;
+}
+
+/* Customer Claim */
+.claim ul {
+	list-style: none;
+	background: url(../imgs/eservice/bg-row-claim1.jpg) top left repeat-y;
+	margin: 0 0 1px 0;
+	padding: 0;
+}
+
+.claim li, .claim2 li, .claim3 li {
+	float: left;
+	list-style-type: none;
+}
+
+.claimresult li {
+	list-style-type: none;
+	float: left;
+}
+
+.claim li.col1 {
+	padding: 9px;
+	width: 230px;
+	font-weight:bold;
+}
+
+.claim li.col2 {
+	padding: 7px;
+	width: 538px;
+}
+
+.claim li.col3 {
+	padding: 9px;
+	padding-left:30px;
+	width: 208px;
+}
+
+.claim2 ul.row {
+	list-style: none;
+	background-color: #e0e0e0;
+	line-height: 36px;
+	margin: 0 0 1px 0;
+	padding: 0 0 0 12px;
+}
+
+.claim2 ul.odd {
+	list-style: none;
+	margin: 0 0 1px 0;
+	padding: 0;
+	background: url(../imgs/eservice/bg-row-claim2.jpg) top left repeat-y;
+}
+
+.claim2 li.col1 {
+	padding: 9px 10px 9px 33px;
+	width: 170px;
+}
+
+.claim2 li.col2 {
+	padding: 7px;
+	width: 573px;
+}
+
+.claimresult li.col1 {
+	margin-bottom: 5px;
+	width: 240px;
+}
+
+.claimresult li.col2 {
+	margin-bottom: 5px;
+}
+
+.inputwidth {
+	width: 400px;
+}
+
+.button {
+	display: block;
+	text-align: center;
+}
+
+.note {
+	display: block;
+	padding: 20px;
+	background-color: #e0e0e0;
+}
+
+.note li {
+	padding-bottom: 10px;
+}
+
+.note li li {
+	list-style: disc;
+}
+
+.note li.last {
+	padding-bottom: 0;
+}
+
+.netrust {
+	display: block;
+	text-align: center;
+	font-size: 10px;
+}
+
+.netrust img {
+	padding-top: 5px;
+}
+
+/* eFeedback */
+#Content-eservice .efeedback h2 {
+	padding: 10px 0 0 0;
+	border-top: #DDD 1px solid;
+	border-bottom: none;
+	text-transform: uppercase;
+}
+
+#Content-eservice .efeedback h2.top {
+	border-top: none;
+}
+
+#Content-eservice .efeedback .menu {
+	float: right;
+	font-size: 12px;
+}
+
+#Content-eservice .efeedback li {
+	list-style-type: none;
+	float: left;
+}
+
+#Content-eservice .efeedback li.col1 {
+	margin-bottom: 5px;
+	width: 160px;
+}
+
+#Content-eservice .efeedback li.col2 {
+	margin-bottom: 5px;
+}
+
+#Content-eservice .efeedback .button {
+	display: block;
+	width: 560px;
+	text-align: center;
+}
+
+/* MOE (non), MOE and Senior Citizen */
+.moe li, .sc li {
+	padding-bottom: 10px;
+}
+
+.moe table, .moe td,
+.sc table, .sc td{
+    border-color: #909090;
+    border-style: solid;
+}
+
+.moe table, .sc table {
+    margin: 5px 0;
+	border-width: 0 0 1px 1px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.moe td, .sc td {
+    margin: 0;
+    padding: 4px;
+    border-width: 1px 1px 0 0;
+	text-align: left;
+}
+
+.moe-form ul,
+.moe-form2 ul,
+.dc-form ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.moe-form ul,
+.dc-form ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-bottom: 1px;
+	background: url(../imgs/eservice/bg-row1.jpg) top left repeat-y;
+}
+
+.moe-form li,
+.sc-form li {
+	list-style-type: none;
+	margin-bottom: 1px;
+	float: left;
+}
+
+.moe-form li.col1,
+.sc-form li.col1 {
+	padding: 9px;
+	width: 130px;
+}
+
+.moe-form li.col2,
+.sc-form li.col2 {
+	padding: 7px;
+	width: 638px;
+}
+
+.moe-form li.col,
+.sc-form li.col {
+	list-style-type: none;
+	margin-bottom: 1px;
+	padding: 9px;
+	background: #e0e0e0;
+	width: 800px;
+}
+
+.moe-form2 li.first {
+	padding-bottom: 10px;
+}
+
+.moe-form2 .collection {
+	display: inline-block;
+	padding-left: 24px;
+	font-size: 11px;
+}
+
+.moe-form2 .location {
+	display: inline-block;
+	width: 130px;
+	padding-left: 24px;
+}
+
+.moe-form2 .town {
+	display: inline-block;
+	width: 150px;
+}
+
+
+/* Concession */
+.conc ul {
+	list-style: none;
+	background: url(../imgs/eservice/bg-row-claim1.jpg) top left repeat-y;
+	margin: 0 0 1px 0;
+	padding: 0;
+}
+
+.conc li, .conc2 li, .conc3 li {
+	float: left;
+	list-style-type: none;
+}
+
+.concresult li {
+	list-style-type: none;
+	float: left;
+}
+
+.conc li.col1 {
+	padding: 9px;
+	width: 230px;
+	font-weight:bold;
+}
+
+.conc li.col2 {
+	padding: 7px;
+	width: 538px;
+}
+
+td.col1 {background:#E0E0E0; color:#333333; font-weight:bold; width:35%; border-bottom:1px #EEEEEE solid;}
+td.col2 {background:#C8C8C8; color:#333333;border-bottom:1px #EEEEEE solid;}
