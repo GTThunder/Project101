@@ -11,8 +11,227 @@
         <script src="/static/js/jquery.slim.min.js"></script>
         <script src="/static/js/tether.min.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+    function validateForm() {
+        var a = document.forms["form"]["ownername"].value;
+	    var b = document.forms["form"]["owneremail"].value;
+	    var c = document.forms["form"]["Q1"].value;
+	    var d = document.forms["form"]["Q2"].value;
+	    var e = document.forms["form"]["Q3"].value;
+        if (a == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        if (b == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+        if (c == "") {
+            alert("Please pick an answer for Q1");
+            return false;
+        }
+        if (d == "") {
+            alert("Please pick an answer for Q2");
+            return false;
+        }
+        if (e == "") {
+            alert("Please pick an answer for Q3");
+            return false;
+        }
+
+        addinformation();
+        drawStuff();
+        drawStuff1();
+        drawChart();
+    }
+
+    function addinformation(){
+        var ownername = document.getElementById('ownername').value;
+        var owneremail = document.getElementById('owneremail').value;
+        var Q1 = document.getElementById('Q1').value;
+        var Q1_value;
+        if(document.getElementById('Q1-1').checked){
+            Q1_value = document.getElementById('Q1-1').value;
+
+        }else if(document.getElementById('Q1-2').checked){
+            Q1_value = document.getElementById('Q1-2').value;
+
+        }else if(document.getElementById('Q1-3').checked){
+            Q1_value = document.getElementById('Q1-3').value;
+        }
+
+        var Q2 = document.getElementById('Q2').value;
+        var Q2_value;
+        if(document.getElementById('Q2-1').checked){
+            Q2_value = document.getElementById('Q2-1').value;
+        }else if(document.getElementById('Q2-2').checked){
+            Q2_value = document.getElementById('Q2-2').value;
+        }else if(document.getElementById('Q2-3').checked){
+            Q2_value = document.getElementById('Q2-3').value;
+        }
+
+        var Q3 = document.getElementById('Q3').value;
+        var Q3_value;
+        if(document.getElementById('Q3-1').checked){
+            Q3_value = document.getElementById('Q3-1').value;
+        }else if(document.getElementById('Q3-2').checked){
+            Q3_value = document.getElementById('Q3-2').value;
+        }else if(document.getElementById('Q3-3').checked){
+            Q3_value = document.getElementById('Q3-3').value;
+        }
+
+        var rows = "";
+        rows += "<tr><td>" + ownername + "</td><td>" + owneremail + "</td><td>" + Q1_value + "</td><td>" + Q2_value + "</td><td>" + Q3_value + "</td></tr>";
+	    $(rows).appendTo(document.getElementById("Answertable"));
+
+    }
+        google.charts.load('current', {'packages':['bar']});
+          google.charts.setOnLoadCallback(drawStuff);
+          var a=0;
+          var b=0;
+          var c=0;
+          var d=0;
+          var e=0;
+          var f=0;
+          var g=0;
+          var h=0;
+          var i=0;
+
+    function addGraphQ1() {
+        if(document.getElementById('Q1-1').checked){
+            a += 1;
+            localStorage.setItem("Option1", a);
+        }else if(document.getElementById('Q1-2').checked){
+            b += 1;
+            localStorage.setItem("Option2", b);
+        }else if(document.getElementById('Q1-3').checked){
+            c += 1;
+            localStorage.setItem("Option3", c);
+        }
+
+    }
+    function addGraphQ2() {
+        if(document.getElementById('Q2-1').checked){
+            d += 1;
+            localStorage.setItem("Option1", d);
+        }else if(document.getElementById('Q2-2').checked){
+            e += 1;
+            localStorage.setItem("Option2", e);
+        }else if(document.getElementById('Q2-3').checked){
+            f += 1;
+            localStorage.setItem("Option3", f);
+        }
+
+    }
+    function addGraphQ3() {
+        if(document.getElementById('Q3-1').checked){
+            g += 1;
+            localStorage.setItem("Option1", g);
+        }else if(document.getElementById('Q3-2').checked){
+            h += 1;
+            localStorage.setItem("Option2", h);
+        }else if(document.getElementById('Q3-3').checked){
+            i += 1;
+            localStorage.setItem("Option3", i);
+        }
+    }
+
+          function loadQ1() {
+          var option1 = localStorage.getItem("a")
+          var option2 = localStorage.getItem("b")
+          var option3 = localStorage.getItem("c")
+
+          }
+          function loadQ2() {
+          var option1 = localStorage.getItem("d")
+          var option2 = localStorage.getItem("e")
+          var option3 = localStorage.getItem("f")
+
+          }
+          function loadQ3() {
+          var option1 = localStorage.getItem("g")
+          var option2 = localStorage.getItem("h")
+          var option3 = localStorage.getItem("i")
+
+          }
+
+          function drawStuff() {
+            addGraphQ1();
+            loadQ1();
+            var data = new google.visualization.arrayToDataTable([
+              ['Answered', 'Number of people'],
+              ['Option 1', a],
+              ['Option 2', b],
+              ['Option 3', c]
+
+            ]);
+            var options = {
+              title: 'Data',
+              width: 500,
+              legend: { position: 'none' },
+              chart: { title: 'Data about answer chosen by users for Q1'},
+              bars: 'horizontal',
+              axes: {
+                x: {
+                  0: {label: 'Number of people'}
+                }
+              },
+              bar: { groupWidth: "150%" }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+            chart.draw(data, options);
+          }
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            addGraphQ2();
+            loadQ2();
+            var data = google.visualization.arrayToDataTable([
+                ['Answered', 'Number of people'],
+                ['Option 1', d],
+                ['Option 2', e],
+                ['Option 3', f]
+
+            ]);
+            var options = {
+                title: 'Data about answer chosen by users for Q2',
+
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+          }
+
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawStuff1);
+
+            function drawStuff1() {
+            addGraphQ3();
+            loadQ3();
+             var data = google.visualization.arrayToDataTable([
+              ['Answered', 'Number of people'],
+              ['Option 1', g],
+              ['Option 2', h],
+              ['Option 3', i]
+            ]);
+
+            var options = {
+              title: 'Data about answer chosen by users for Q3',
+              curveType: 'function',
+              legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('top_a_div'));
+            chart.draw(data, options);
+          }
+
+    </script>
 	</head>
-	<body>
+    <body>
+	<div>
         <nav>
 			<div class="menu-nav">
 				<ul class="a">
@@ -27,6 +246,111 @@
 				</ul>
 		   </div>
 		</nav>
+
+    <div class="container">
+
+<h2>Mrt Educational Quiz Section</h2>
+<p>This Section is to test and further enhance ethics in the MRT</p>
+<form id="form" name="form"  method="post" style="color:black;">
+	<fieldset>
+    <legend>User info</legend>
+		<div class = "form-group">
+			<label for="ownername">Name*</label>
+			<input class="form-control" type="text" name="ownername" id="ownername" placeholder="Your Name">
+		</div>
+		<div class = "form-group">
+			<label for="owneremail">Email address*</label>
+			<input class="form-control" type="email" name="owneremail" id="owneremail" placeholder="Enter email">
+		</div>
+	</fieldset>
+  <fieldset>
+
+    <legend>Lessons</legend>
+	<div>
+    <label id="Q1" for="Q1">Q1) You and your friend was in the mrt heading to Toa Payoh.
+        Upon arriving at Yio Chu Kang MRT, an elderly woman boarded the MRT however, there was no seats avaliable.
+        But by chance, you are seating on one of the seats. What should you do?*</label><br>
+		<input type="radio" id='Q1-1' name="Q1" value="Option1">Give up the seat
+		<input type="radio" id='Q1-2' name="Q1" value="Option2">Pretend to sleep
+		<input type="radio" id='Q1-3' name="Q1" value="Option3">Act like you are talking to your friend
+	</div>
+    <div class = "form-group">
+      <label for="Q1">Q1</label>
+      <textarea class="form-control" id="Q1Reason" rows="3" placeholder="Why did you choose this answer?"></textarea>
+    </div>
+	<div>
+		<label id="Q2" for="Q2">Q2) You are in the MRT during Peak hours but on the stop Serangoon, many people come in and not everyone could fit.
+            But behind there are still many spaces behind you. What should you do?*</label><br>
+		<input type="radio" id='Q2-1' name="Q2" value="Option1">Post on facebook.
+		<input type="radio" id='Q2-2' name="Q2" value="Option2">Move in and notify others there are more space inside.
+		<input type="radio" id='Q2-3' name="Q2" value="Option3">Do nothing.
+	</div>
+    <div class = "form-group">
+      <label for="Q2">Q2</label>
+      <textarea class="form-control" id="Q2Reason" rows="3" placeholder="Why did you choose this answer?"></textarea>
+    </div>
+	<div>
+		<label id="Q3" for="Q3">Q3) You are in a crowded Mrt your bad is very big and keeps touching others. What should you do?*</label><br>
+		<input type="radio" id='Q3-1' name="Q3" value="Option1"> Tell others to move back.
+		<input type="radio" id='Q3-2' name="Q3" value="Option2"> Do nothing.
+		<input type="radio" id='Q3-3' name="Q3" value="Option3"> Put bag on the floor.
+	</div>
+    <div class = "form-group">
+      <label for="Q3">Q3</label>
+      <textarea class="form-control" id="Q3Reason" rows="3" placeholder="Why did you choose this answer?"></textarea>
+    </div>
+  </fieldset>
+  <div class="checkbox">
+	<button class="btn btn-primary" value="Save/Show" onclick="validateForm();" type="button">Submit</button>
+  </div>
+</form>
+</div>
+<div style="color:black">
+<p>Users Review</p>
+<table style="width:100%">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Q1</th>
+			<th>Q2</th>
+			<th>Q3</th>
+		</tr>
+	</thead>
+	<tbody id="Answertable">
+	</tbody>
+</table>
+<div class = "container">
+	<div class = "row">
+		<div class="col-md-6">
+			<section id="Summary1">
+                <div id="top_x_div" style="width: 1000px; height: 500px; margin-top:50px; margin-bottom:50px;"></div>
+            </section>
+        </div>
+	</div>
+</div>
+<div class = "container">
+	<div class = "row">
+		<div class="col-md-6">
+			<section id="Summary2">
+				  <div id="piechart_3d" style="width: 1000px; height: 500px; margin-top:50px; margin-bottom:50px;"></div>
+            </section>
+        </div>
+	</div>
+</div>
+
+
+<div class = "container">
+	<div class = "row">
+		<div class="col-md-6">
+			<section id="Summary3">
+                <div id="top_a_div" style="width: 600px; height: 500px; margin-top:50px; margin-bottom:50px; margin-right:200px;"></div>
+		    </section>
+        </div>
+	</div>
+</div>
+</div>
+    </div>
 
 </body>
 </html>
