@@ -52,7 +52,7 @@
 <br/>
 <div style="text-align: center" class="row">
     <div class="col-md-6">
-        <img src="/static/images/" style="width:200px;height:200px;"/>
+        <img src="/static/images" style="width:200px;height:200px;"/>
     </div>
     <div class="col-md-6">
         <h1>MRT Carriage</h1>
@@ -65,42 +65,40 @@
         <h2>MRT Carriage</h2>
     </div>
 </header>
-    <div class = "container">
-        <div class = "row">
-            <select style="vertical-align: middle; margin: 0px;">
-                <option value="Which MRT">Which MRT</option>
-                <option value="Admiralty">Admiralty</option>
-                <option value="Yio Chu Kang">Yio Chu Kang</option>
-                <option value="Raffles Place">Raffles Place</option>
-                <option value="Serangoon">Serangoon</option>
-            </select>
+{% from "MunHong/_formhelpers.html" import render_field %}
+    <form method=post>
+        <div class = "container">
+            <div class = "row">
+                {{ render_field(form.x, class_="form-control") }}
+
+            </div>
         </div>
-    </div>
-    <div class = "container">
-        <div class = "row">
-            <select style="vertical-align: middle; margin: 0px;">
-                    <option value="Which Carriage">Which Carriage</option>
-                    <option value="Exit1-4">Exit1-4</option>
-                    <option value="Exit5-8">Exit5-8</option>
-                    <option value="Exit9-12">Exit9-12</option>
-                    <option value="Exit13-16">Exit13-16</option>
-                    <option value="Exit17-20">Exit17-20</option>
-                    <option value="Exit21-24">Exit21-24</option>
-            </select>
+        <div class = "container">
+            <div class = "row">
+                <select style="vertical-align: middle; margin: 0px;">
+                        <option value="Which Carriage">Which Carriage</option>
+                        <option value="Exit1-4">Exit1-4</option>
+                        <option value="Exit5-8">Exit5-8</option>
+                        <option value="Exit9-12">Exit9-12</option>
+                        <option value="Exit13-16">Exit13-16</option>
+                        <option value="Exit17-20">Exit17-20</option>
+                        <option value="Exit21-24">Exit21-24</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="checkbox">
-	<button class="btn btn-primary" style="vertical-align: middle; margin: 0px;" value="Save/Show" href="/my-link/" type="button">Submit</button>
-    </div>
-<!--footer-->
-<section class="footer" id="footer">
+        <div class="checkbox">
+        <button class="btn btn-primary" style="vertical-align: middle; margin: 0px;" value="Save/Show" href="/my-link/" type="button">Submit</button>
+        </div>
+        </form>
+    <!--footer-->
+    <section class="footer" id="footer">
 
-    <p>
-		&copy; 2017<br>
-	</p>
+        <p>
+            &copy; 2017<br>
+        </p>
 
-</section>
-<!-- wrapper -->
+    </section>
+    <!-- wrapper -->
 
-</body>
-</html>
+    </body>
+    </html>
