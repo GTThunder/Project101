@@ -1,13 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request,redirect,url_for
 
 import firebase_admin
 from firebase_admin import credentials, db
-
+from wtforms import SelectField,validators,Form
 cred = credentials.Certificate('cred/daryltan-9eddf-firebase-adminsdk-gj8gk-a7e6e9d435.json')
 default_app = firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://daryltan-9eddf.firebaseio.com/'
 })
-
+class MrtCrowded(Form):
+    x=SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty")])
 root = db.reference()
 
 app = Flask(__name__)
@@ -26,7 +27,13 @@ def at():
 
 @app.route('/mc/')
 def mc():
-    return render_template('/MunHong/MrtCrowded.html')
+    form = MrtCrowded(request.form)
+    if request.method == 'POST' and form.validate():
+        xx=form.x.data
+        print(xx)
+        return redirect(url_for('login'))
+    return render_template('/MunHong/MrtCrowded.html', form=form)
+
 
 @app.route('/mh/')
 def mh():
@@ -38,10 +45,12 @@ def routes():
 
 @app.route('/my-link/')
 def my_link():
-  return render_template('/MunHong/MrtCrowdedFunction.py')
+
+  return render_template('/MunHong/MrtCrowdedFunction.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
+    debugger=True
     app.run()
 
 
