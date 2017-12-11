@@ -1,13 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request,redirect,url_for
 
 import firebase_admin
 from firebase_admin import credentials, db
-
+from wtforms import SelectField,validators,Form
 cred = credentials.Certificate('cred/daryltan-9eddf-firebase-adminsdk-gj8gk-a7e6e9d435.json')
 default_app = firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://daryltan-9eddf.firebaseio.com/'
 })
-
+class MrtCrowded(Form):
+    x=SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty")])
 root = db.reference()
 
 app = Flask(__name__)
@@ -17,24 +18,39 @@ def home():
     return render_template('home.html')
 
 @app.route('/mt/')
-def mrtTiming():
-    return render_template('mrtTiming.html')
-
-@app.route('/my-link/')
-def my_link():
-    print('I got clicked!')
-    return 'Click.'
+def mt():
+    return render_template('/Daryl/mrtTiming.html')
 
 @app.route('/at/')
 def at():
-    return render_template('alternative_transport.html')
+    return render_template('/Daryl/alternative_transport.html')
 
-@app.route('/mc')
+@app.route('/mc/')
 def mc():
-    return render_template('MrtCrowded.html')
+    form = MrtCrowded(request.form)
+    if request.method == 'POST' and form.validate():
+        xx=form.x.data
+        print(xx)
+        return redirect(url_for('login'))
+    return render_template('/MunHong/MrtCrowded.html', form=form)
+
+
+@app.route('/mh/')
+def mh():
+    return render_template('/MunHong/MrtHappy.html')
+
+@app.route('/routes/')
+def routes():
+    return render_template('MRT_Routes.html')
+
+@app.route('/my-link/')
+def my_link():
+
+  return render_template('/MunHong/MrtCrowdedFunction.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
+    debugger=True
     app.run()
 
 
