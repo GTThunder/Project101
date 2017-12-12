@@ -10,13 +10,14 @@ cred = credentials.Certificate('cred/daryltan-9eddf-firebase-adminsdk-gj8gk-a7e6
 default_app = firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://daryltan-9eddf.firebaseio.com/'
 })
+
 class MrtCrowded(Form):
     x=SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty"),("1","Yishun")])
 root = db.reference()
 
 app = Flask(__name__)
 
-@app.route('/home/')
+@app.route('/')
 def home():
     return render_template('home.html')
 
@@ -57,12 +58,11 @@ def mh():
 
 @app.route('/routes/')
 def routes():
-    return render_template('MRT_Routes.html')
+    return render_template('/JunLoong/MRT_Routes.html')
 
 @app.route('/my-link/')
 def my_link():
-
-  return render_template('/MunHong/MrtCrowdedFunction.html')
+    return render_template('/MunHong/MrtCrowdedFunction.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
