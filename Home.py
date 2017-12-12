@@ -12,8 +12,8 @@ default_app = firebase_admin.initialize_app(cred, {
 })
 
 class MrtCrowded(Form):
-    x=SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty"),("Yishun","Yishun")])
-    y=SelectField('Which Carriage,[validators.DataRequired()],choices=[("Exit1-4","Exit1-4"),("Exit5-8","Exit5-8")])')
+    x = SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty"),("Yishun","Yishun")])
+    y = SelectField('Which Carriage',[validators.DataRequired()],choices=[("Door 1-4", "Door 1-4"), ("Door 5-8", "Door 5-8")])
 root = db.reference()
 
 app = Flask(__name__)
