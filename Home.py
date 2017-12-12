@@ -12,7 +12,8 @@ default_app = firebase_admin.initialize_app(cred, {
 })
 
 class MrtCrowded(Form):
-    x=SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty"),("1","Yishun")])
+    x=SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty"),("Yishun","Yishun")])
+    y=SelectField('Which Carriage,[validators.DataRequired()],choices=[("Exit1-4","Exit1-4"),("Exit5-8","Exit5-8")])')
 root = db.reference()
 
 app = Flask(__name__)
@@ -33,23 +34,18 @@ def at():
 def mc():
     form = MrtCrowded(request.form)
     if request.method == 'POST' and form.validate():
-        xx=form.x.data
-        print(xx)
-        return redirect(url_for('home'))
+        y = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+             30,
+             31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+
+        df = DataFrame(abs(np.random.randn(7, 44)), index=y, columns=x)
+
+        plt.pcolor(df)
+        plt.yticks(np.arange(0.5, len(df.index), 1), df.index)
+        plt.xticks(np.arange(0.5, len(df.columns), 1), df.columns)
+        plt.show()
     return render_template('MrtCrowded.html', form=form)
-
-@app.route('/function', methods=["POST","GET"])
-def function():
-    y = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-    x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-         31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
-
-    df = DataFrame(abs(np.random.randn(7, 44)), index=y, columns=x)
-
-    plt.pcolor(df)
-    plt.yticks(np.arange(0.5, len(df.index), 1), df.index)
-    plt.xticks(np.arange(0.5, len(df.columns), 1), df.columns)
-    plt.show()
 
 
 @app.route('/mh/')
