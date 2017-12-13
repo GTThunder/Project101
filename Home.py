@@ -19,11 +19,6 @@ class MrtCrowded(Form):
     y = SelectField('Which Carriage',[validators.DataRequired()],choices=[("Door 1-4", "Door 1-4"), ("Door 5-8", "Door 5-8")])
 root = db.reference()
 
-# class MrtHappy(Form):
-#     username = StringField('Username', [validators.DataRequired()])
-#     password = PasswordField('Password', [validators.DataRequired()])
-
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -125,7 +120,6 @@ def routes():
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
-
     app.run(debug=True)
 
 
