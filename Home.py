@@ -71,7 +71,7 @@ def quizInfo():
 @app.route('/quizInfoGet')
 def quizInfoGet():
     result = firebase.get("/userAnswers", None)
-    return render_template("MrtEthicsResult.html", quizInfoGet = result)
+    return render_template("MrtEthicsResult.html", stats = result)
 
 @app.route('/mh/')
 def mh():
