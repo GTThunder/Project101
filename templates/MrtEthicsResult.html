@@ -54,7 +54,7 @@
 {%  if quizInfoGet %}
     <ul class = "HelloWorld">
         {% for info in quizInfoGet %}
-            <h2 id = "name">Name: {{ quizInfoGet[info].ownername}}</h2>
+            <h2 id = "name">Name: {{ quizInfoGet[info].name}}</h2>
         {% endfor %}
     </ul>
 {% else %}
