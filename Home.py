@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request,redirect,url_for
-
+from firebase import firebase
 import firebase_admin
 from firebase_admin import credentials, db
 from wtforms import SelectField,validators,Form
@@ -47,6 +47,14 @@ def mc():
         plt.show()
     return render_template('MrtCrowded.html', form=form)
 
+@app.route('/sentInfoToFireBase/', methods=["POST"])
+def sentInfoToFireBase():
+    UserResults = {
+        "name" : request.form["userName"],
+        "email" : request.form["userEmail"]
+    }
+    firebase.post("/UserAnswers", UserResults)
+    return redirect(url_for("MrtHappy"))
 
 @app.route('/mh/')
 def mh():
@@ -62,7 +70,7 @@ def my_link():
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
-    debugger=True
-    app.run()
+
+    app.run(debug=True)
 
 
