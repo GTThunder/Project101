@@ -77,9 +77,51 @@ def userInformationGet():
 def mh():
     return render_template('/MrtHappy.html')
 
-@app.route('/routes/')
+class webForm(Form):
+    dropDownBox = SelectField('Eg of Dropbox Box', [validators.DataRequired()],
+                              choices=[('', '< Select Boarding Station >'),('0', 'Jurong East [NS1/EW24]'),('3', 'Bukit Batok [NS2]'),
+                                    ('5', 'Bukit Gombak [NS3]'),('9', 'Choa Chu Kang [NS4/BP1]'),('11', 'Yew Tee [NS5]'),('16', 'Kranji [NS7]'),
+                                    ('18', 'Marsiling [NS8]'),('21', 'Woodlands'),('23', 'Admiralty [NS10]'),('26', 'Sembawang [NS11]'),('30', 'Yishun [NS13]'),
+                                    ('32', 'Khatib [NS14]'),('38', 'Yio Chu Kang [NS15]'),('40', 'Ang Mo Kio [NS16]'),('42', 'Bishan [NS17/CC15]'),
+                                    ('44', 'Braddell [NS18]'),('46', 'Toa Payoh [NS19]'),('48', 'Novena [NS20]'),('50', 'Newton [NS21/DT11]'),('52', 'Orchard [NS22]'),
+                                    ('54', 'Somerset [NS23]'),('55', 'Dhoby Ghaut [NS24/NE6/CC1'),('57', 'City Hall [NS25/EW13]'),('59', 'Raffles Place [NS26/EW14]'),
+                                    ('61', 'Marina Bay [NS27/CE2]'),('63', 'Marina South Pier [NS28]')], default='')
+
+    dropDownBox1 =SelectField('Eg of Dropbox Box', [validators.DataRequired()],
+                              choices=[('', '< Select Alighting Station >'), ('0', 'Jurong East [NS1/EW24]'),
+                                       ('3', 'Bukit Batok [NS2]'),
+                                       ('5', 'Bukit Gombak [NS3]'), ('9', 'Choa Chu Kang [NS4/BP1]'),
+                                       ('11', 'Yew Tee [NS5]'), ('16', 'Kranji [NS7]'),
+                                       ('18', 'Marsiling [NS8]'), ('21', 'Woodlands'), ('23', 'Admiralty [NS10]'),
+                                       ('26', 'Sembawang [NS11]'), ('30', 'Yishun [NS13]'),
+                                       ('32', 'Khatib [NS14]'), ('38', 'Yio Chu Kang [NS15]'),
+                                       ('40', 'Ang Mo Kio [NS16]'), ('42', 'Bishan [NS17/CC15]'),
+                                       ('44', 'Braddell [NS18]'), ('46', 'Toa Payoh [NS19]'), ('48', 'Novena [NS20]'),
+                                       ('50', 'Newton [NS21/DT11]'), ('52', 'Orchard [NS22]'),
+                                       ('54', 'Somerset [NS23]'), ('55', 'Dhoby Ghaut [NS24/NE6/CC1'),
+                                       ('57', 'City Hall [NS25/EW13]'), ('59', 'Raffles Place [NS26/EW14]'),
+                                       ('61', 'Marina Bay [NS27/CE2]'), ('63', 'Marina South Pier [NS28]')], default='')
+
+
+numValue = ''
+@app.route('/routes/', methods=["GET","POST"])
 def routes():
-    return render_template('/JunLoong/MRT_Routes.html')
+    form=webForm(request.form)
+    if request.method=="POST" and form.validate():
+        x = form.dropDownBox.data
+        y = form.dropDownBox1.data
+        est = int(x) - int(y)
+        if est > 0:
+            numValue = est
+            print(numValue)
+        elif est < 0:
+            numValue = est * -1
+            print(numValue)
+        return render_template('JunLoong/MRT_Table.html', given_value=numValue)
+        # return redirect(url_for("table"))
+    return render_template('JunLoong/MRT_Routes.html',form=form)
+
+
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
