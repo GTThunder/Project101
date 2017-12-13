@@ -63,13 +63,13 @@ def ma():
     return render_template('/MrtAnswers.html')
 
 @app.route('/submit_userInformation', methods=["POST"])
-def submit_userInformatio():
+def submit_userInformation():
     userAnswers = {
         "name" : request.form["ownername"],
         "email" : request.form["owneremail"]
     }
     firebase.post("/userInformationGet", userAnswers)
-    return redirect(url_for("userInformationGet"))
+    return redirect(url_for("ma"))
 
 @app.route('/userInformationGet')
 def userInformationGet():

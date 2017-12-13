@@ -32,7 +32,7 @@
 	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<div>
 			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link" href="#Home" style="color: #00FF00;">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="/" style="color: #00FF00;">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="#Mrt Timing" style="color: #00FF00;">MRT Timing & Exits</a></li>
 				<li class="nav-item"><a class="nav-link" href="#MRT Route" style="color: #00FF00;">MRT Routes</a></li>
                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" style="color: #00FF00;" id="navbarDropdownMrtSensor/EthicsLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MRT Sensor/Ethics</a>
@@ -55,7 +55,7 @@
 <br/>
 <div style="text-align: center" class="row">
     <div class="col-md-6">
-        <img src="/static/images" style="width:200px;height:200px;"/>
+        <img src="/static/images/carriage.jpg" style="width:500px;height:300px;"/>
     </div>
     <div class="col-md-6">
         <h1>MRT Carriage</h1>
@@ -68,6 +68,11 @@
         <h2>MRT Carriage</h2>
     </div>
 </header>
+<h1 style="color:black">Below shows an example of a carriage in a Mrt</h1>
+<div>
+    <img align="middle" src="/static/images/carriageitinery.png" style="width:1000px;height:500px;"/>
+</div>
+<h2 style="color:black">Click the Mrt Station that you are outside currently and select the door you are at.</h2>
 {% from "includes/_formhelpers.html" import render_field %}
     <form method=post>
         <div class = "container">
@@ -78,7 +83,7 @@
             </div>
         </div>
         <div class="checkbox">
-        <button class="btn btn-primary" style="vertical-align: middle; margin: 0px;" value="Save/Show" href="/my-link/" type="submit">Submit</button>
+        <button class="btn btn-primary" style="text-align: center; margin: 0px;" value="Save/Show" type="submit">Submit</button>
         </div>
         </form>
     <!--footer-->
