@@ -38,6 +38,10 @@ def mt():
 def at():
     return render_template('/Daryl/alternative_transport.html')
 
+@app.route('/me/')
+def me():
+    return render_template('/MrtEthics.html')
+
 @app.route('/mc/', methods=["POST","GET"])
 def mc():
     form = MrtCrowded(request.form)
@@ -71,7 +75,6 @@ def login():
     if request.method == 'POST' and form.validate():
         username = form.username.data
         password = form.password.data
-
         if username == 'admin' and password == 'P@ssw0rd':  # harcoded username and password
             session['logged_in'] = True  # this is to set a session to indicate the user is login into the system.
             return redirect(url_for('viewpublications'))
