@@ -5,14 +5,22 @@
 		<link rel="icon" href="../../static/images/HomePageLogo.png"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
 		<link rel="stylesheet" href="../../static/css/navigationbar.css"/>
 		<link rel="stylesheet" href="../../static/css/pubtrans.css"/>
         <link rel="stylesheet" href="../../static/css/bootstrap.min.css"/>
         <script src="../../static/js/jquery.slim.min.js"></script>
         <script src="../../static/js/tether.min.js"></script>
         <script src="../../static/js/bootstrap.min.js"></script>
+        <script src="../../static/js/Pubtrans.js"></script>
 	</head>
+
+    <style>
+        .input{
+            margin: auto;
+            height: 30px;
+        }
+    </style>
+
 	<body>
 	<div class="wrapper" id="wrapper">
         <nav class="navbar-inverse navbar-toggleable-md justify-content-context">
@@ -36,11 +44,25 @@
 		<div class="parallax" style="background-image: url('../../static/images/banner.jpg');" id="background">
 		</div>
 	</header>
+
 	<div class="wrapper">
-	<div class="row">
+    <div class="row" style="margin: auto; width: auto; height: auto;">
+        <hr/>
+        <div class="col-12">
+            <h1>Calculator</h1>
+            <p align="middle">This section is to help you see approximately the cost of owning a vehicle in Singapore. Results given are not accurate as prices change over time.</p>
+            <table class="frost">
+                <tr>
+                    <td><a href="https://www.valuepenguin.sg/average-cost-getting-driving-license-singapore">Driver's License:</a></td>
+                    <td><input type="radio" name="license" value="private" id="private"> Private Lessons</td>
+                    <td><input type="radio" name="license" value="non-private" id="non-private"> Non-private Lessons</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
             <div class="col-12" align="middle">
-                <marquee>This calculator is to help you see approximately the cost of owning a vehicle in Singapore. Results given are not accurate as prices change over time. </marquee>
-                <h2>Pick a vehicle</h2>
+                <h3>Pick a vehicle</h3>
                 <table>
                     <tr>
                         <td>
@@ -77,50 +99,29 @@
                     </tr>
                     <tr>
                         <td style="text-align:center">
-                            <input type="radio" name="vehicle" value="Toyota Wish">
+                            <input type="radio" name="vehicle" id="wish" value="Toyota Wish">
                         </td>
                         <td style="text-align:center">
-                            <input type="radio" name="vehicle" value="Toyota Vios">
+                            <input type="radio" name="vehicle" id="vios" value="Toyota Vios">
                         </td>
                         <td style="text-align:center">
-                            <input type="radio" name="vehicle" value="Harley-Davidson Street Rod">
+                            <input type="radio" name="vehicle" id="hdsd" value="Harley-Davidson Street Rod">
                         </td>
                     </tr>
                 </table>
             </div>
     </div>
-    <div class="row" style="margin: auto; width: auto; height: auto;">
-        <hr/>
-        <div class="col-12">
-            <table class="frost">
-                <tr>
-                    <td>
-                        <ul>
-                            <li><input type="checkbox" name="license" value="license" checked>+ Driver's License</li>
-                            <li>+ COE (Certificate of Entitlement)</li>
-                            <li>+ Registration Fee</li>
-                            <li>+ Car Insurance</li>
-
-                        </ul>
-                    </td>
-                    <td>
-                        <h1>PLUS</h1>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><input type="checkbox" name="loan" value="loan" checked>+ Monthly Car Installments</li>
-                            <li>+ Maintenance Cost</li>
-                            <li>+ Road Tax</li>
-                            <li>+ Miscellaneous Costs (Petrol & Parking)</li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-        </div>
+    <div class="row">
+        <button type="button" class="input" onclick="showInput()">test</button>
     </div>
+    <div>
+        <br>
+        <br>
+        <h2 id="displayresults"></h2>
+	</div>
     <div class="row">
 
     </div>
-	</div>
+    </div>
 	</body>
 </html>

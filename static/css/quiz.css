@@ -1,0 +1,365 @@
+@charset "UTF-8";
+
+
+@media (min-width: 110px) and (max-width: 711px) {
+
+header h1 {
+	font-size: 45px !important;
+}
+
+header p{
+  padding-top: 40px !important;
+  font-size: 10px !important;
+  letter-spacing: 7px !important;
+}
+
+#start{
+	margin-left: 20% !important;
+	margin-right: 30% !important;
+}
+
+#quest{
+	font-size: 20px !important;
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+
+#answerT {
+	margin: 10% 0% 0% 15% !important;
+}
+#answerF {
+	margin: 10% 0% 0% 15% !important;
+}
+
+#reset {
+  margin: 0% 27% 0% 23% !important;
+}
+}
+
+@media (min-width: 508px) and (max-width: 711px){
+header h1 {
+	font-size: 65px !important;
+}
+
+header p{
+	letter-spacing: 7px !important;
+}
+}
+
+
+
+@media (min-width: 712px) and (max-width: 910px){
+
+#start {
+	margin-left: 40% !important;
+}
+
+#answerT {
+	margin: 5% 0% 0% 30% !important;
+}
+#answerF {
+	margin: 5% 0% 0% 15% !important;
+}
+#quest{
+
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+
+}
+
+.row-12 {
+	font-family: 'Coda', cursive;
+	font-size: 25px;
+	background-color: #b1bed3;
+}
+
+header h1{
+	font-family: 'Bungee Shade', cursive;
+	font-size: 65px;
+	text-align: center;
+}
+
+header p{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 7px;
+	margin-top: -70px;
+	padding-bottom: 60px;
+}
+
+#start {
+	margin-left: 42%;
+
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 1s; /* Safari */
+    transition-duration: 1s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-animation-name: changecolour; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+     -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: changecolour;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+
+}
+
+#start:after {
+    content: "";
+    background: #868679;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes changecolour {
+    0% {color: white;}
+    50% {color: black;}
+    100% {color: white;}
+}
+
+/* Standard syntax */
+@keyframes changecolour {
+   0% {color: white;}
+    50% {color: black;}
+    100% {color: white;}
+}
+
+
+
+#count {
+	text-align: center;
+	font-size: 45px;
+	padding-bottom: 10px;
+}
+
+#points {
+	text-align: center;
+	font-size: 25px;
+	padding-bottom: 10px;
+	padding-top: 40px;
+}
+
+
+#category {
+	text-align: center;
+	padding-bottom: 20px;
+	text-transform: uppercase;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+#quest {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#answerT {
+	margin: 5% 10% 0% 30%;
+
+    background-color: #4CAF50;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+#answerF {
+	margin: 5% 20% 0% 15%;
+
+    background-color: #4CAF50;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+#winner{
+	text-align: center;
+	font-size: 45px;
+	padding-bottom: 10px;
+}
+
+#looser{
+	text-align: center;
+	font-size: 45px;
+	padding-bottom: 10px;
+}
+
+#reset{
+	background-color: #4CAF50;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    position: relative;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+     -webkit-animation-name: changecolour; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+     -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: changecolour;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+	margin-left: 40%;
+	margin-top:5%;
+
+}
+
+/*
+	Side Navigation Menu V2, RWD
+	===================
+	License:
+	https://goo.gl/EaUPrt
+	===================
+	Author: @PableraShow
+
+ */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#A7A1AE;
+  background-color:#1F2739;
+}
+
+h1 {
+  font-size:3em;
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+.black {
+  font-size:1em;
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #FB667A;
+}
+
+.black a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB667A;
+  text-decoration: none;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.banana th h1 {
+	  font-weight: bold;
+	  font-size: 1em;
+  text-align: left;
+  color: #185875;
+}
+
+.banana td {
+	  font-weight: normal;
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.banana {
+	  text-align: left;
+	  overflow: hidden;
+	  width: 80%;
+	  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.banana td, .banana th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+  padding-left:2%;
+}
+
+/* Background-color of the odd rows */
+.banana tr:nth-child(odd) {
+	  background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.banana tr:nth-child(even) {
+	  background-color: #2C3446;
+}
+
+.banana th {
+	  background-color: #1F2739;
+}
+
+.banana td:first-child { color: #FB667A; }
+
+.banana tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+}banana td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.banana td:nth-child(4),
+.banana th:nth-child(4) { display: none; }
+}

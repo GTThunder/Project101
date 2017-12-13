@@ -15,7 +15,7 @@ default_app = firebase_admin.initialize_app(cred, {
 })
 
 class MrtCrowded(Form):
-    x = SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty"),("Yishun","Yishun")])
+    x = SelectField('Which MRT',[validators.DataRequired()],choices=[("Admiralty","Admiralty"),("Yishun","Yishun")])
     y = SelectField('Which Carriage',[validators.DataRequired()],choices=[("Door 1-4", "Door 1-4"), ("Door 5-8", "Door 5-8")])
 root = db.reference()
 
@@ -121,7 +121,13 @@ def routes():
         # return redirect(url_for("table"))
     return render_template('JunLoong/MRT_Routes.html',form=form)
 
+@app.route('/pubtrans/')
+def pubtrans():
+    return render_template('../templates/Fadhilah/pubTrans.html')
 
+@app.route('/pollutant/')
+def pollutant():
+    return render_template('../templates/Fadhilah/Pollutant.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
