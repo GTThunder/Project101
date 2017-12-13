@@ -69,7 +69,7 @@ def submit_userInformation():
         "email" : request.form["owneremail"]
     }
     firebase.post("/userInformationGet", userAnswers)
-    return redirect(url_for("userInformationGet"))
+    return redirect(url_for("ma"))
 
 @app.route('/userInformationGet')
 def userInformationGet():
