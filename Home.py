@@ -68,6 +68,10 @@ def surveyInfo():
     firebase.post("/userAnswers", userResults)
     return redirect(url_for("mh"))
 
+@app.route('/surveyInfoGet')
+def surveyInfoGet():
+    result = firebase.get("/userAnswers", None)
+    return render_template("MrtEthicsResult.html", surveyInfoGet = result)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
