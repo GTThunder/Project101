@@ -59,27 +59,23 @@ def mc():
         plt.show()
     return render_template('MrtCrowded.html', form=form)
 
-@app.route('/submit_messages', methods=["POST"])
-def submit_messages():
-    message = {
+@app.route('/submit_userInformation', methods=["POST"])
+def submit_userInformatio():
+    userAnswers = {
         "name" : request.form["ownername"],
         "email" : request.form["owneremail"]
     }
-    firebase.post("/userAnswers", message)
-    return redirect(url_for("messages"))
+    firebase.post("/userInformationGet", userAnswers)
+    return redirect(url_for("userInformationGet"))
 
-@app.route('/messages')
-def messages():
-    result = firebase.get("/messages", None)
-    return render_template("MrtEthicsResult.html", messages = result)
+@app.route('/userInformationGet')
+def userInformationGet():
+    result = firebase.get("/userInformationGet", None)
+    return render_template("MrtEthicsResult.html", userInformationGet = result)
 
 @app.route('/mh/')
 def mh():
     return render_template('/MrtHappy.html')
-
-@app.route('/mer/')
-def mer():
-    return render_template('/MrtEthicsResult.html')
 
 @app.route('/routes/')
 def routes():
