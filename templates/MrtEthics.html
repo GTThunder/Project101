@@ -12,7 +12,6 @@
   <script src="/static/js/tether.min.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>
   <script src="/static/js/scripts.js"></script>
-
   <link rel="stylesheet" href="/static/css/custom.css">
   <title>Bootstrap - TransportCitySG</title>
 </head>
@@ -49,35 +48,16 @@
 	</div>
 </nav>
 </div>
-<br/>
-<div style="text-align: center" class="row">
-    <div class="col-md-6">
-        <img src="/static/images" style="width:200px;height:200px;"/>
-    </div>
-    <div class="col-md-6">
-        <h1>MRT Carriage</h1>
-        <p>Reduce the problem of crowded places in mrt stations, help people know where to go so as to help board the train.</p>
-        <p>In order to use Step 1: Select your destination. Step 2: Select which Carriage Step 3: Submit and your destination will be loaded.</p>
-    </div>
+<h1>Welcome to Mrt Ethics!</h1>
+<p>At this part you will watch this video and learn ethics in the MRT.</p>
+<div>
+<iframe align=middle width="1000" height="500"
+src="https://www.youtube.com/embed/XGSy3_Czz8k">
+</iframe>
 </div>
-<header>
-	<div class="text-center">
-        <h2>MRT Carriage</h2>
-    </div>
-</header>
-{% from "includes/_formhelpers.html" import render_field %}
-    <form method=post>
-        <div class = "container">
-            <div class = "row">
-                {{ render_field(form.x, class_="form-control") }}
-                <br>
-                {{ render_field(form.y, class_="form-control") }}
-            </div>
-        </div>
-        <div class="checkbox">
-        <button class="btn btn-primary" style="vertical-align: middle; margin: 0px;" value="Save/Show" href="/my-link/" type="submit">Submit</button>
-        </div>
-        </form>
+<div class="checkbox">
+      <input class="btn btn-primary" href="/mh"  type="button" value="Next">
+  </div>
     <!--footer-->
     <section class="footer" id="footer">
 
