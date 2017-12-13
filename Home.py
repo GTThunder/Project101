@@ -58,7 +58,7 @@ def sentInfoToFireBase():
 
 @app.route('/mh/')
 def mh():
-    return render_template('/MunHong/MrtHappy.html')
+    return render_template('/MrtHappy.html')
 
 @app.route('/routes/')
 def routes():
