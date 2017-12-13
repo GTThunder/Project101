@@ -53,10 +53,13 @@
 <p>Here are a list of the users that have done this.</p>
 {%  if quizInfoGet %}
     <ul class = "HelloWorld">
-        {% for info in surveyInfoGet %}
-            <h2 id = "name">Name: {{ surveyInfoGet[info].ownername}}</h2>
+        {% for info in quizInfoGet %}
+            <h2 id = "name">Name: {{ quizInfoGet[info].ownername}}</h2>
         {% endfor %}
     </ul>
+{% else %}
+    No Users
+{%  endif %}
 
     <!--footer-->
     <section class="footer" id="footer">
