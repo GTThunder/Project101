@@ -53,8 +53,8 @@
 <p>Here are a list of the users that have done this.</p>
 {%  if surveyInfoGet %}
     <ul class = "HelloWorld">
-        {% for surveyInfoGet in surveyInfoGet %}
-            <h2 id = "name">Name: {{ surveyInfoGets[SurveyInfoGet].ownername}}</h2>
+        {% for info in surveyInfoGet %}
+            <h2 id = "name">Name: {{ surveyInfoGet[info].ownername}}</h2>
         {% endfor %}
     </ul>
 
