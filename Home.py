@@ -76,6 +76,7 @@ def userInformationGet():
     result = firebase.get("/userInformationGet", None)
     return render_template("MrtEthicsResult.html", userInformationGet = result)
 
+
 class webForm(Form):
     dropDownBox = SelectField('Eg of Dropbox Box', [validators.DataRequired()],
                               choices=[('', '< Select Boarding Station >'),('0', 'Jurong East [NS1/EW24]'),('3', 'Bukit Batok [NS2]'),
