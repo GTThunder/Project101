@@ -6,6 +6,9 @@ from wtforms import SelectField,validators,Form
 import numpy as np
 from pandas import DataFrame
 import matplotlib.pyplot as plt
+
+firebase = \
+    firebase.FirebaseApplication('https://daryltan-9eddf.firebaseio.com/', None)
 cred = credentials.Certificate('cred/daryltan-9eddf-firebase-adminsdk-gj8gk-a7e6e9d435.json')
 default_app = firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://daryltan-9eddf.firebaseio.com/'
@@ -15,6 +18,11 @@ class MrtCrowded(Form):
     x = SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty"),("Yishun","Yishun")])
     y = SelectField('Which Carriage',[validators.DataRequired()],choices=[("Door 1-4", "Door 1-4"), ("Door 5-8", "Door 5-8")])
 root = db.reference()
+
+# class MrtHappy(Form):
+#     username = StringField('Username', [validators.DataRequired()])
+#     password = PasswordField('Password', [validators.DataRequired()])
+
 
 app = Flask(__name__)
 
@@ -47,14 +55,32 @@ def mc():
         plt.show()
     return render_template('MrtCrowded.html', form=form)
 
-@app.route('/sentInfoToFireBase/', methods=["POST"])
-def sentInfoToFireBase():
-    UserResults = {
-        "name" : request.form["userName"],
-        "email" : request.form["userEmail"]
+@app.route('/surveyInfo', methods=["POST"])
+def surveyInfo():
+    userResults = {
+        "name" : request.form["ownername"],
+        "email" : request.form["owneremail"]
     }
-    firebase.post("/UserAnswers", UserResults)
-    return redirect(url_for("MrtHappy"))
+    firebase.post("/userAnswers", userResults)
+    return redirect(url_for("mh"))
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm(request.form)
+    if request.method == 'POST' and form.validate():
+        username = form.username.data
+        password = form.password.data
+
+        if username == 'admin' and password == 'P@ssw0rd':  # harcoded username and password
+            session['logged_in'] = True  # this is to set a session to indicate the user is login into the system.
+            return redirect(url_for('viewpublications'))
+        else:
+            error = 'Invalid login'
+            flash(error, 'danger')
+            return render_template('Login.html', form=form)
+
+    return render_template('Login.html', form=form)
 
 @app.route('/mh/')
 def mh():

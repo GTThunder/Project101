@@ -265,7 +265,24 @@
 <div class="container">
     <h2>Mrt Educational Quiz Section</h2>
     <p>This Section is to test and further enhance ethics in the MRT</p>
-    <form id="form" name="form"  method="post" action="/sentInfoToFireBase" style="color:black;">
+{#    <form method="POST" action="login">#}
+{#        <div class="form-group">#}
+{#            <div class="form-row">#}
+{#                {{ render_field(form.username, class_="form-control") }}#}
+{#                {{ render_field(form.password, class_="form-control") }}#}
+{#            </div>#}
+{#        </div>#}
+{#         <div class="form-group">#}
+{#            <div class="form-row">#}
+{#                <div class="form-group col-md-11">#}
+{#                </div>#}
+{#                <div class="form-group col-md-1">#}
+{#                    <input type="submit" value="Submit" class="btn btn-info"/>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </form>#}
+    <form action="/surveyInfo" method="post" id="form" name="form" style="color:black;" >
 	<fieldset>
     <legend>User info</legend>
 		<div class = "form-group">
@@ -315,9 +332,9 @@
     </div>
   </fieldset>
   <div class="checkbox">
-	<button class="btn btn-primary" value="Save/Show" onclick="validateForm();" type="button">Submit</button>
+      <input class="btn btn-primary" onclick="validateForm();"  type="submit" value="Submit">
   </div>
-</form>
+    </form>
 </div>
 <div style="color:black">
 <p>Users Review</p>
@@ -364,7 +381,6 @@
 	</div>
 </div>
 </div>
-    </div>
 
 </body>
 </html>
