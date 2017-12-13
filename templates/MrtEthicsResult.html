@@ -51,10 +51,10 @@
 </div>
 <h1>Results:</h1>
 <p>Here are a list of the users that have done this.</p>
-{%  if quizInfoGet %}
+{%  if messages %}
     <ul class = "HelloWorld">
-        {% for info in quizInfoGet %}
-            <h2 id = "name">Name: {{ quizInfoGet[info].name}}</h2>
+        {% for message in messages %}
+            <h2 id = "name123">Name: {{ messages[message].name}}</h2>
         {% endfor %}
     </ul>
 {% else %}
