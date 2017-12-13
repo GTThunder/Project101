@@ -51,7 +51,7 @@
 </div>
 <h1>Results:</h1>
 <p>Here are a list of the users that have done this.</p>
-{%  if surveyInfoGet %}
+{%  if quizInfoGet %}
     <ul class = "HelloWorld">
         {% for info in surveyInfoGet %}
             <h2 id = "name">Name: {{ surveyInfoGet[info].ownername}}</h2>

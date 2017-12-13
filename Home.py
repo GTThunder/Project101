@@ -59,19 +59,19 @@ def mc():
         plt.show()
     return render_template('MrtCrowded.html', form=form)
 
-@app.route('/surveyInfo', methods=["POST"])
-def surveyInfo():
+@app.route('/quizInfo', methods=["POST"])
+def quizInfo():
     userResults = {
         "name" : request.form["ownername"],
         "email" : request.form["owneremail"]
     }
     firebase.post("/userAnswers", userResults)
-    return redirect(url_for("mh"))
+    return redirect(url_for("mer"))
 
-@app.route('/surveyInfoGet')
-def surveyInfoGet():
+@app.route('/quizInfoGet')
+def quizInfoGet():
     result = firebase.get("/userAnswers", None)
-    return render_template("MrtEthicsResult.html", surveyInfoGet = result)
+    return render_template("MrtEthicsResult.html", quizInfoGet = result)
 
 @app.route('/mh/')
 def mh():
