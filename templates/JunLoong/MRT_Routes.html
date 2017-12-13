@@ -4,6 +4,7 @@
 <html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop no-websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
 <!--//Clickjacking - Framable Page Security Vulernability - HS20150812 -->
 <style id="antiClickjack">body{display:none !important;}</style>
+     {% from 'includes/_formhelpers.html' import render_field %}
 <script type="text/javascript">
 <!--
    if (self === top) {
@@ -74,13 +75,18 @@
 <h2>MRT / LRT ENQUIRY</h2>
 <p>For MRT / LRT fares and travel times, please select boarding and alighting stations.</p>
 	<section class="eguide-table">
-		<form method="POST" action="rail_info.php" name="formmrt" action="script.cgi" onSubmit="return isFilled('formmrt');">
+
+		<form  method="post">
+
 		  <dl class="eguide">
+
 		    <dt><strong>Boarding Station</strong></dt>
 			<dd>
+                {{ render_field(form.dropDownBox) }}
+                <!--
 		    <select name="mrtcode_start" >
-		        <option value="index">< Select Boarding Station ></option>
-				<option value="44">Admiralty [NS10]</option>
+                <option value="index">< Select Boarding Station ></option>
+<option value="44">Admiralty [NS10]</option>
 <option value="34">Aljunied [EW9]</option>
 <option value="2">Ang Mo Kio [NS16]</option>
 <option value="119">Bakau [SE3]</option>
@@ -237,13 +243,18 @@
 <option value="48">Yew Tee [NS5]</option>
 <option value="1">Yio Chu Kang [NS15]</option>
 <option value="22">Yishun [NS13]</option>
+
 		      </select>
+		      -->
 		      </dd>
 		    </dl>
 		  <dl class="eguide">
 		    <dt><strong>Alighting Station</strong></dt>
 			<dd>
+                 {{ render_field(form.dropDownBox1) }}
+                <!--
 		    <select name="mrtcode_end" >
+
 		        <option value="index">< Select Alighting Station ></option>
 				<option value="44">Admiralty [NS10]</option>
 <option value="34">Aljunied [EW9]</option>
@@ -403,13 +414,15 @@
 <option value="1">Yio Chu Kang [NS15]</option>
 <option value="22">Yishun [NS13]</option>
 		      </select>
+		      -->
 		      </dd>
 		    </dl>
+
 		    <br />
 		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		    <input type="submit" value="Submit" name="submit">
-		    &nbsp;&nbsp;<input type="reset" value="Reset" name="reset">
+		    <input type="reset" value="Reset" name="reset">
 		</form>
 	</section>
 </section>
