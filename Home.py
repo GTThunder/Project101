@@ -33,10 +33,6 @@ def mt():
 def at():
     return render_template('/Daryl/alternative_transport.html')
 
-@app.route('/me/')
-def me():
-    return render_template('/MrtEthics.html')
-
 @app.route('/mc/', methods=["POST","GET"])
 def mc():
     form = MrtCrowded(request.form)
@@ -54,6 +50,18 @@ def mc():
         plt.show()
     return render_template('MrtCrowded.html', form=form)
 
+@app.route('/me/')
+def me():
+    return render_template('/MrtEthics.html')
+
+@app.route('/mh/')
+def mh():
+    return render_template('/MrtHappy.html')
+
+@app.route('/ma/')
+def ma():
+    return render_template('/MrtAnswers.html')
+
 @app.route('/submit_userInformation', methods=["POST"])
 def submit_userInformatio():
     userAnswers = {
@@ -67,10 +75,6 @@ def submit_userInformatio():
 def userInformationGet():
     result = firebase.get("/userInformationGet", None)
     return render_template("MrtEthicsResult.html", userInformationGet = result)
-
-@app.route('/mh/')
-def mh():
-    return render_template('/MrtHappy.html')
 
 class webForm(Form):
     dropDownBox = SelectField('Eg of Dropbox Box', [validators.DataRequired()],
