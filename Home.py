@@ -80,7 +80,7 @@ class webForm(Form):
     dropDownBox = SelectField('Eg of Dropbox Box', [validators.DataRequired()],
                               choices=[('', '< Select Boarding Station >'),('0', 'Jurong East [NS1/EW24]'),('3', 'Bukit Batok [NS2]'),
                                     ('5', 'Bukit Gombak [NS3]'),('9', 'Choa Chu Kang [NS4/BP1]'),('11', 'Yew Tee [NS5]'),('16', 'Kranji [NS7]'),
-                                    ('18', 'Marsiling [NS8]'),('21', 'Woodlands'),('23', 'Admiralty [NS10]'),('26', 'Sembawang [NS11]'),('30', 'Yishun [NS13]'),
+                                    ('18', 'Marsiling [NS8]'),('21', 'Woodlands [NS9]'),('23', 'Admiralty [NS10]'),('26', 'Sembawang [NS11]'),('30', 'Yishun [NS13]'),
                                     ('32', 'Khatib [NS14]'),('38', 'Yio Chu Kang [NS15]'),('40', 'Ang Mo Kio [NS16]'),('42', 'Bishan [NS17/CC15]'),
                                     ('44', 'Braddell [NS18]'),('46', 'Toa Payoh [NS19]'),('48', 'Novena [NS20]'),('50', 'Newton [NS21/DT11]'),('52', 'Orchard [NS22]'),
                                     ('54', 'Somerset [NS23]'),('55', 'Dhoby Ghaut [NS24/NE6/CC1'),('57', 'City Hall [NS25/EW13]'),('59', 'Raffles Place [NS26/EW14]'),
