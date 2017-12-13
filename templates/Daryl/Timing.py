@@ -34,12 +34,14 @@ class Time:
     def create_timing(self):
         t1 = Timing('Bishan', 'A', 'Circle Line', '3 mins', 'Towards HabourFront')
         self.add_timing(t1)
-        t2 = Timing('Bishan', 'B', 'Circle Line', '5 mins', 'Towards Dhoby Ghaut')
+        t2 = Timing('Bishan', 'B', 'Circle Line', '4 mins', 'Towards Marina Bay')
         self.add_timing(t2)
-        t3 = Timing('Bishan', 'C', 'North South Line', '3 mins', 'Marina Bay')
+        t3 = Timing('Bishan', 'B', 'Circle Line', '5 mins', 'Towards Dhoby Ghaut')
         self.add_timing(t3)
-        t4 = Timing('Bishan', 'D', 'North South Line', '5 mins', 'Jurong East')
+        t4 = Timing('Bishan', 'C', 'North South Line', '3 mins', 'Marina Bay')
         self.add_timing(t4)
+        t5 = Timing('Bishan', 'D', 'North South Line', '5 mins', 'Jurong East')
+        self.add_timing(t5)
 
     def add_timing(self, time):
         self.__class__.timing.append(time)
@@ -50,8 +52,8 @@ class Time:
             for time in self.__class__.timing:
                 print(number, time)
                 number += 1
-            choice = int(input('Enter your choice (1,2,3,4): '))
-            if choice == 1 or 2 or 3 or 4:
+            choice = int(input('Enter your choice (1,2,3,4,5): '))
+            if choice == 1 or 2 or 3 or 4 or 5:
                 time = self.__class__.timing[choice - 1]
                 self.__class__.choice.append(time)
                 break

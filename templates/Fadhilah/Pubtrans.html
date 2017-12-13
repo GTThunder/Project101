@@ -6,8 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-		<link rel="stylesheet" href="../../static/css/section.css"/>
-		<link rel="stylesheet" href="../../static/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../../static/css/navigationbar.css"/>
+		<link rel="stylesheet" href="../../static/css/pubtrans.css"/>
+        <link rel="stylesheet" href="../../static/css/bootstrap.min.css"/>
         <script src="../../static/js/jquery.slim.min.js"></script>
         <script src="../../static/js/tether.min.js"></script>
         <script src="../../static/js/bootstrap.min.js"></script>
@@ -32,67 +33,94 @@
 	</div>
 	<!--header-->
 	<header>
-		<div class="parallax" style="background-image: url('../../static/images/banner.jpg');"id="background">
+		<div class="parallax" style="background-image: url('../../static/images/banner.jpg');" id="background">
 		</div>
 	</header>
+	<div class="wrapper">
 	<div class="row">
-	<div class = "col-6">
-		<div class = "jelly">
-			<p>Owning a personal vehicle in Singapore can be costly. There are many things to consider before buying a car, truck, motorcycle, van, etc.
-			COE fees, ERP rates, VEC fees, Petrol cost, Taxes.<p>
-		</div>
-	</div>
-	<div class="col-6">
-		<h3>Calculate!</h3>
-			<p>"Every year, you might expect to pay an average of S$1,473 a year on car insurance,
-				S$621 for servicing/maintenance costs, S$742 in road tax, and S$2,341 in petrol costs."--
-			<a href="https://www.valuepenguin.sg/costs-car-ownership-singapore">valuepenguin.sg</a>
-			Calculate the approximated total cost of owning your own vehicle.</p>
-	</div>
-	</div>
-	<div class="row">
-	<div class="col-7">
-			<h3>Driving vs Other Travelling Methods</h3>
-			<table>
-				<tr>
-					<th>Public Transport + Walking</th>
-					<th>Cycling</th>
-					<th>Driving</th>
-				</tr>
-				<tr>
-					<td>
-						<ul>
-							<li>Low cost</li>
-							<li>No other fees</li>
-							<li>Able to avoid traffic jams</li>
-						</ul>
-					</td>
-					<td>
-						<ul>
-							<li>Increase cardiovascular fitness</li>
-							<li>Increase muscle strength and flexibility</li>
-						</ul>
-					</td>
-					<td>
-						<ul>
-							<li>Contributes to the amount of pollutant being released in Singapore</li>
-							<li>Taxes, COE fees, ERP fees, etc…</li>
-							<li>Repairing and engine cost</li>
-						</ul>
-					</td>
-				</tr>
-			</table>
-	</div>
-	<div class="col-5">
-		<h3>PSI Readings</h3>
-			<p><iframe width="600" height="400" src="https://data.gov.sg/dataset/pm2-5/resource/fa0958a9-bade-419e-9475-cbf5ccf4f746/view/19acb1a8-ceda-4c9a-aff8-1adcd8e70b1c" frameBorder="0"> </iframe>
-			<p>Common types of pollutants:</p>
-				<ul>
-					<li>Sulphur Dioxide</li>
-					<li>Nitrogen Dioxide</li>
-				</ul>
-			</p>
-	</div>
+            <div class="col-12" align="middle">
+                <marquee>This calculator is to help you see approximately the cost of owning a vehicle in Singapore. Results given are not accurate as prices change over time. </marquee>
+                <h2>Pick a vehicle</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="cherry">
+                                <img src="http://www.monitor.co.ug/image/view/-/3843946/highRes/1584877/-/maxw/600/-/ahul9rz/-/wish.jpg" class="jelly" id="jelly">
+                                <div class="overlay">
+                                    <div class="text">
+                                        Toyota Wish $109,888<br>
+                                        COE Category B & E</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cherry">
+                                <img src="http://www.telegraph.co.uk/content/dam/motoring2/2015/12/02/1-2016-BMW-7-series-front-xlarge-xlarge_trans_NvBQzQNjv4BqrWYeUU_H0zBKyvljOo6zlkYMapKPjdhyLnv9ax6_too.jpg" class="jelly" id="jelly">
+                                <div class="overlay">
+                                    <div class="text">
+                                        Toyota Vios $89,988<br>
+                                        COE Category A & E</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cherry">
+                                <img src="http://www.brm.co.nz/wp-content/uploads/2017/07/H-D-StreetRod-YM17-0864.jpg?x43905" class="jelly" id="jelly">
+                                <div class="overlay">
+                                    <div class="text">
+                                            Harley-Davidson Street Rod $19,900<br>
+                                            COE Category D & E
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            <input type="radio" name="vehicle" value="Toyota Wish">
+                        </td>
+                        <td style="text-align:center">
+                            <input type="radio" name="vehicle" value="Toyota Vios">
+                        </td>
+                        <td style="text-align:center">
+                            <input type="radio" name="vehicle" value="Harley-Davidson Street Rod">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+    <div class="row" style="margin: auto; width: auto; height: auto;">
+        <hr/>
+        <div class="col-12">
+            <table class="frost">
+                <tr>
+                    <td>
+                        <ul>
+                            <li><input type="checkbox" name="license" value="license" checked>+ Driver's License</li>
+                            <li>+ COE (Certificate of Entitlement)</li>
+                            <li>+ Registration Fee</li>
+                            <li>+ Car Insurance</li>
+
+                        </ul>
+                    </td>
+                    <td>
+                        <h1>PLUS</h1>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><input type="checkbox" name="loan" value="loan" checked>+ Monthly Car Installments</li>
+                            <li>+ Maintenance Cost</li>
+                            <li>+ Road Tax</li>
+                            <li>+ Miscellaneous Costs (Petrol & Parking)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+
+    </div>
 	</div>
 	</body>
 </html>
