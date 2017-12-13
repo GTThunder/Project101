@@ -63,7 +63,7 @@ def ma():
     return render_template('/MrtAnswers.html')
 
 @app.route('/submit_userInformation', methods=["POST"])
-def submit_userInformatio():
+def submit_userInformation():
     userAnswers = {
         "name" : request.form["ownername"],
         "email" : request.form["owneremail"]
