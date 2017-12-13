@@ -73,33 +73,17 @@ def surveyInfoGet():
     result = firebase.get("/userAnswers", None)
     return render_template("MrtEthicsResult.html", surveyInfoGet = result)
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm(request.form)
-    if request.method == 'POST' and form.validate():
-        username = form.username.data
-        password = form.password.data
-        if username == 'admin' and password == 'P@ssw0rd':  # harcoded username and password
-            session['logged_in'] = True  # this is to set a session to indicate the user is login into the system.
-            return redirect(url_for('viewpublications'))
-        else:
-            error = 'Invalid login'
-            flash(error, 'danger')
-            return render_template('Login.html', form=form)
-
-    return render_template('Login.html', form=form)
-
 @app.route('/mh/')
 def mh():
     return render_template('/MrtHappy.html')
 
+@app.route('/mer/')
+def mer():
+    return render_template('/MrtEthicsResult.html')
+
 @app.route('/routes/')
 def routes():
     return render_template('/JunLoong/MRT_Routes.html')
-
-@app.route('/my-link/')
-def my_link():
-    return render_template('/MunHong/MrtCrowdedFunction.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
