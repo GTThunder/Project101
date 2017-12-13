@@ -6,6 +6,9 @@ from wtforms import SelectField,validators,Form
 import numpy as np
 from pandas import DataFrame
 import matplotlib.pyplot as plt
+
+firebase = \
+    firebase.FirebaseApplication('https://daryltan-9eddf.firebaseio.com/', None)
 cred = credentials.Certificate('cred/daryltan-9eddf-firebase-adminsdk-gj8gk-a7e6e9d435.json')
 default_app = firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://daryltan-9eddf.firebaseio.com/'
@@ -15,6 +18,11 @@ class MrtCrowded(Form):
     x = SelectField('Which MRT',[validators.DataRequired()],choices=[("Admaralty","Admaralty"),("Yishun","Yishun")])
     y = SelectField('Which Carriage',[validators.DataRequired()],choices=[("Door 1-4", "Door 1-4"), ("Door 5-8", "Door 5-8")])
 root = db.reference()
+
+# class MrtHappy(Form):
+#     username = StringField('Username', [validators.DataRequired()])
+#     password = PasswordField('Password', [validators.DataRequired()])
+
 
 app = Flask(__name__)
 
@@ -29,6 +37,10 @@ def mt():
 @app.route('/at/')
 def at():
     return render_template('/Daryl/alternative_transport.html')
+
+@app.route('/me/')
+def me():
+    return render_template('/MrtEthics.html')
 
 @app.route('/mc/', methods=["POST","GET"])
 def mc():
@@ -47,14 +59,19 @@ def mc():
         plt.show()
     return render_template('MrtCrowded.html', form=form)
 
-@app.route('/sentInfoToFireBase/', methods=["POST"])
-def sentInfoToFireBase():
-    UserResults = {
-        "name" : request.form["userName"],
-        "email" : request.form["userEmail"]
+@app.route('/submit_userInformation', methods=["POST"])
+def submit_userInformatio():
+    userAnswers = {
+        "name" : request.form["ownername"],
+        "email" : request.form["owneremail"]
     }
-    firebase.post("/UserAnswers", UserResults)
-    return redirect(url_for("MrtHappy"))
+    firebase.post("/userInformationGet", userAnswers)
+    return redirect(url_for("userInformationGet"))
+
+@app.route('/userInformationGet')
+def userInformationGet():
+    result = firebase.get("/userInformationGet", None)
+    return render_template("MrtEthicsResult.html", userInformationGet = result)
 
 @app.route('/mh/')
 def mh():
@@ -63,10 +80,6 @@ def mh():
 @app.route('/routes/')
 def routes():
     return render_template('/JunLoong/MRT_Routes.html')
-
-@app.route('/my-link/')
-def my_link():
-    return render_template('/MunHong/MrtCrowdedFunction.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
