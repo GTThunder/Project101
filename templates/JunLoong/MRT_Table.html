@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop no-websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+<!--//Clickjacking - Framable Page Security Vulernability - HS20150812 -->
+<style id="antiClickjack">body{display:none !important;}</style>
+<script type="text/javascript">
+<!--
+   if (self === top) {
+       var antiClickjack = document.getElementById("antiClickjack");
+       antiClickjack.parentNode.removeChild(antiClickjack);
+   } else {
+       top.location = self.location;
+   }
+-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style media="screen"></style>
+<meta name="keywords" content="transitlink,eguide,bus,mrt,lrt,services">
+<meta name="description" content="TransitLink eService">
+<meta charset="utf-8">
+<meta http-equiv="X-Frame-Options" content="deny"> <!-- //HS201705 fix for framable page -->
+<title>TransitLink eGuide - MRT / LRT Enquiry</title>
+<link rel="stylesheet" type="text/css" href="/static/css/eservice.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/static/css/tl_main.css" media="all" />
+<!--[if lt IE 8]><link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" /><![endif]-->
+<!--  <script type="text/javascript" src="../js/jquery-1.6.1.min.js"></script>-->
+<script type="text/javascript" src="/static/js/png.js"></script>
+<script>DD_belatedPNG.fix('img, .xpng');</script>
+<script type="text/javascript" src="/static/js/modernizr-1.7.min.js"></script>
+<script type="text/javascript" src="/static/js/eguide.js"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29711756-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script></head>
+
+<body><!-- Change this ID to what page you are in, this is useful if you are using CSS to style your navigation //-->
+
+<div id="Content-eservice">
+<table width="100%" border="0">
+<tr>
+  <td width="10%"><img src="../imgs/transitlink_logo_60.jpg" /></td>
+  <td><img src="../imgs/title/eguide.png" alt="Electronic Guide"></td>
+  
+  <!-- Add Mobile Services Icons -->
+  <!--
+  <td width="200">
+   <table>
+    <tr>
+		<td rowspan="2"><img src="../../imgs/eservice/transitlink_mobile_services.png" alt="TransitLink Mobile Services"></td>
+		<td valign="bottom"><a href="https://itunes.apple.com/sg/app/transitlink-mobile-services/id667933103?mt=8"><img src="../../imgs/eservice/app_store_badge.png" alt="TransitLink Mobile Services" target="_blank" border="0" width="100"></a></td>
+	</tr>
+	<tr>
+		<td><a href="https://play.google.com/store/apps/details?id=sg.com.transitlink&hl=en"><img src="../../imgs/eservice/play_store_badge.png" alt="TransitLink Mobile Services" target="_blank" border="0" width="100"></a></td>
+	</tr>
+    </table>
+  </td>   -->
+</tr>
+</table>
+<article>
+
+<p>E-Guide provides a convenient one-stop information guide on bus and train services.</p><h2>MRT / LRT ENQUIRY</h2>
+<h3></h3><p>Click <a href="rail_idx.php">here</a> to perform another MRT / LRT enquiry.</p>
+
+<!--//HS20140624-->				
+<section class="eguide-table">
+<table border="0" width="100%">
+	<tr>
+		<td width="50%" class="subhead">From</td><td class="subhead">To</td>
+	</tr>
+	<tr>
+		<td class="data"><span id="railColorNS">NS1</span>&nbsp;&nbsp;<span id="railColorEW">EW24</span>&nbsp;&nbsp;Jurong East</td>
+		<td class="data"><span id="railColorNS">NS2</span>&nbsp;&nbsp; Bukit Batok</td>
+	</tr>
+</table>
+<br>
+<table border="0" width="100%">
+	<tr>
+	    <td width="25%" class="subhead">Fare Type</td>
+	    <td width="25%" class="subhead">Card</td>
+	    <td class="subhead">Standard Ticket</td>
+		<td class="subhead">^ Estimated Travel Time (min)</td> <!--//HS201512 to hide the travel time when DTL2 open-->
+	</tr>
+	<tr>
+		<td class="subhead2">Adult</td>
+		<td width="15%">$0.77</td>
+		<td rowspan="4">$1.40</td>
+		<td rowspan="4">{{ given_value }}</td> <!--//HS201512 to hide the travel time when DTL2 open-->
+	</tr>
+	<tr>
+		<td class="subhead2">Senior Citizen / PWD <span class="super">#</span></td>
+		<td>$0.54</td>
+	</tr>
+	<tr>
+		<td class="subhead2">Student</td>
+		<td>$0.37</td>
+	</tr>
+	<tr>
+		<td class="subhead2">WTCS <span class="super">#</span></td>
+		<td>$0.63</td>
+	</tr>
+</table>
+<p align="justify"><u><b>Notes:</b></u></p>
+<!--//HS201512 add the additional foot note for travel time-->
+<!--<p align="justify">The Estimated Travel Time is unavailable at the moment. We apologise for any inconvenience caused.</p>-->
+<!--//LL20170110 add the additional foot notes-->
+<p align="justify">*Fares are calculated based on the distance travelled. Please click <a href="https://www.transitlink.com.sg/TIdetail.aspx?ty=art&Id=61">here</a> to view the fares.
+</p>
+<!--//LL20170110 add the additional foot notes-->
+<p align="justify">^ Estimated travel time does NOT include waiting time.
+</p>
+
+<p align="justify"># Fares for PWD - Persons with Disabilities and WTCS - Workfare Transport Concession Scheme.
+</p>
+<form>
+	<p><input type="button" value="<< Back" onClick="history.back()">	</p>
+</form>
+</section>
+</div> <!-- End Content //-->
+</body>
+</html>
