@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>QUIZ-lette</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="icon" href="../../static/images/HomePageLogo.png"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<link rel="stylesheet" href="../../static/css/navigationbar.css"/>
+		<link rel="stylesheet" href="../../static/css/pubtrans.css"/>
+        <link rel="stylesheet" type="text/css" href="../../static/css/quiz.css">
+        <link rel="stylesheet" href="../../static/css/bootstrap.min.css"/>
+        <script src="../../static/js/jquery.slim.min.js"></script>
+        <script src="../../static/js/tether.min.js"></script>
+        <script src="../../static/js/bootstrap.min.js"></script>
+        <script src="../../static/js/quiz.js"></script>
+        <!-- FONT -->
+	    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
+
+
+	</head>
+	<body>
+	<div class="wrapper" id="wrapper">
+        <nav class="navbar-inverse navbar-toggleable-md justify-content-context">
+			<div class="menu-nav">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+				<ul class="a">
+                    <li class="nav-item"><img src="../../static/images/HomePageLogo.png" alt="logo" class="logo"/></li>
+					<li class="nav-item"><a href="#Home" class="mg">Home</a></li>
+					<li class="nav-item"><a href="#Mrt Timing" class="mg">MRT Timing & Exits</a></li>
+					<li class="nav-item"><a href="#MRT Route" class="mg">MRT Routes</a></li>
+					<li class="nav-item"><a href="#Mrt Details" class="mg">MRT Sensor</a></li>
+					<li class="nav-item"><a href="#Mrt Details" class="mg">MRT Status</a></li>
+					<li class="nav-item"><a href="#Public Transportation" class="mg">Public Transportation</a></li>
+					<li class="nav-item"><a href="#Mrt Details" class="mg">Feedback</a></li>
+				</ul>
+		   </div>
+		</nav>
+	</div>
+	<!--header-->
+	<header>
+		<div class="parallax" style="background-image: url('../../static/images/banner.jpg');" id="background">
+		</div>
+	</header>
+	<div class="wrapper">
+	<div class="row">
+        <div class="col-8">
+            <h1>Pollutant from Vehicles</h1>
+            <p>Transportation is a single source of air pollution. There are many pollutants that add up to the percentage of air pollution.
+            Major pollutants are Particulate matter (PM), Hydrocarbons (HC), Nitrogen oxides (NOx), Carbon monoxide (CO),Sulfur dioxide (SO2),
+            Toxics and Greenhouse Gases. All this contributes to the increasing PSI readings in Singapore.</p>
+            <h1><span class="blue"></span>Pollutant<span class="blue"></span> <span class="yellow">Table</pan></h1>
+
+            <table class="banana">
+                <thead>
+                    <tr>
+                        <th><h1>Pollutants</h1></th>
+                        <th><h1>Causes</h1></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hydrocarbons</td>
+                        <td>Irritates respiratory system, reduced lung capacity</td>
+                    </tr>
+                    <tr>
+                        <td>Nitrogen Oxides</td>
+                        <td>Weaken body's defence against respiratory infections</td>
+                    </tr>
+                    <tr>
+                        <td>Carbon Monoxides</td>
+                        <td>Blocks oxygen from the brain, heart and vital organs</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <iframe width="350" height="350" src="https://data.gov.sg/dataset/psi/resource/82776919-0de1-4faf-bd9e-9c997f9a729d/view/d57fb838-2ccc-4d5c-9adc-907b34185e5c" frameBorder="0"> </iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" style="border: 1px solid deeppink">
+            <header>
+            <h1> Quiz-lette </h1>
+
+            <button onclick="catAndQuest()" id="start"> START </button>
+            </header>
+            <div class="strawberry">
+            <div id="questions">
+                <div id="count"></div>
+                <div id="category"></span> </div>
+                <div id="quest"> </div>
+                <button onclick="answer(true)" style="display:none;" id="answerT"> TRUE</button>
+                <button onclick="answer(false)" style="display:none;" id="answerF"> FALSE</button>
+                <div id="points"></div>
+            </div>
+            <div id="winner" style="display:none;">YOU WIN! <br>Congrats, smartypants!</div>
+            <div id="looser" style="display:none;">Sorry, no more questions.<br> You lose!</div>
+            <button onclick="restart()" style="display:none;" id="reset"> PLAY AGAIN? </button>
+            </div>
+            </div>
+        </div>
+    </div>
+	</div>
+	</body>
+</html>

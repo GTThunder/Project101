@@ -21,20 +21,20 @@
     display: table;
 }
 .cherry {
-  position: relative;
+    position: relative;
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  width: 300px;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      width: 300px;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #008CBA;
 }
 
 .cherry:hover .overlay {
@@ -65,9 +65,14 @@ h1{
 }
 .frost{
     margin: auto;
+    border-collapse: separate;
+    border-spacing: 15px;
 }
 .frost td{
-    width: 300px;
-    text-align: left;
+    text-align: center;
     vertical-align: middle;
+    padding: 5px;
+}
+#displayresults{
+    color: #8c5059;
 }
