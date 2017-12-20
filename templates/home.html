@@ -1,57 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required meta tags always come first -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-	<!-- bootstrap content -->
-  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-  <script src="/static/js/jquery.slim.min.js"></script>
-  <script src="/static/js/tether.min.js"></script>
-  <script src="/static/js/bootstrap.min.js"></script>
-  <script src="/static/js/scripts.js"></script>
-  <link rel="stylesheet" href="/static/css/custom.css">
-  <title>Bootstrap - TransportCitySG</title>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
 </head>
 <body>
-{% from "/includes/_formhelpers.html" import render_field %}
-<!--wrapper start-->
-<div class="wrapper" id="wrapper">
+{% extends 'includes/layout.html' %}
+{% block body %}
 
-<nav class="navbar-inverse navbar-toggleable-md justify-content-context" style="background-color: black;">
-	<div class="container">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-		<a href="#" class ="navbar-brand">
-			<img src="/static/images/HomePageLogo.png" style="width:200px;height:100px" class="navbar" alt="TransportCitySGLogo">
-		</a>
-	<div class="collapse navbar-collapse" id="navbarNavDropdown">
-		<div>
-			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link" href="/" style="color: #00FF00;">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="#Mrt Timing" style="color: #00FF00;">MRT Timing & Exits</a></li>
-				<li class="nav-item"><a class="nav-link" href="/routes/" style="color: #00FF00;">MRT Routes</a></li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" style="color: #00FF00;" id="navbarDropdownMrtSensor/EthicsLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MRT Sensor/Ethics</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMrtSensor/EthicsLink">
-					<a class="dropdown-item" href="/mc">MRT Sensor</a>
-					<a class="dropdown-item" href="/me">MRT Ethics</a>
-                    <a class="dropdown-item" href="/mh">MRT Ethics Quiz</a>
-                    <a class="dropdown-item" href="/ma">MRT Ethics Answers</a>
-                    <a class="dropdown-item" href="/userInformationGet">MRT Ethics Results</a>
-				<li class="nav-item"><a class="nav-link" href="#Mrt Details" style="color: #00FF00;">MRT Status</a></li>
-				<li class="nav-item"><a class="nav-link" href="#Public Transportation" style="color: #00FF00;">Public Transportation</a></li>
-				<li class="nav-item"><a class="nav-link" href="#Mrt Details" style="color: #00FF00;">Feedback</a></li>
-			</ul>
-		</div>
-   </div>
-	
-	</div>
-</nav>
-</div>
-<!--header-->
+
+    <!--header-->
 <header>
 
 	<div class="parallax" style="background-image: url(/static/images/transport.jpg);" id="banner"> </div>
@@ -77,17 +35,17 @@
 <br/>
 <div style="text-align: center " class="row">
     <div class="col-md-4">
-        <img src="/static/images/" style="width:200px;height:200px;"/>
+        <img src="/static/images/train.jpg" style="width:200px;height:200px;"/>
     <h1>MRT Schedule</h1>
     <p>MRT schedule, when does the train arrive, subsequent train arrival timings, information about the exits of the mrt station</p>
     </div>
     <div class="col-md-4">
-        <img src="/static/images/" style="width:200px;height:200px;"/>
+        <img src="/static/images/bus.jpg" style="width:200px;height:200px;"/>
     <h1>Route Planning</h1>
     <p>When train breaks down, what bus to take to destination.</p>
     </div>
     <div class="col-md-4">
-        <img src="/static/images/" style="width:200px;height:200px;"/>
+        <img src="/static/images/bus_calculator.jpg" style="width:200px;height:200px;"/>
     <h1>Bus Fare Calculator</h1>
         <p>Tool to calculate the fare of each bus trip. Tool to calculate the time taken for each bus trip.</p>
 </div>
@@ -143,11 +101,8 @@
     <h1>Feedback Form</h1>
         <p>Feedback, collect data about User Experience</p>
 </div>
-<!--footer-->
-<section class="footer" id="footer">
-    <p style= "text-align: center">&copy; 2017 - Smart Mobility</p>
-</section>
-<!-- wrapper -->
+
+{% endblock %}
 
 </body>
 </html>

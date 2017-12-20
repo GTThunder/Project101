@@ -123,14 +123,24 @@ def routes():
 
 @app.route('/pubtrans/')
 def pubtrans():
-    return render_template('../templates/Fadhilah/pubTrans.html')
+    return render_template('/Fadhilah/Pubtrans.html')
 
 @app.route('/pollutant/')
 def pollutant():
-    return render_template('../templates/Fadhilah/Pollutant.html')
+    return render_template('/Fadhilah/Pollutant.html')
+
+@app.route('/mrtfeedback/')
+def mrtfeedback():
+    return render_template('/Bryan/MRTFeedback.html')
+
+@app.route('/mrtstatus/')
+def mrtstatus():
+    return render_template('/Bryan/MRTStatus.html')
+
+@app.route('/mrtoperatinghours/')
+def mrtoperatinghours():
+    return render_template('/Bryan/MRTOperatingHours.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
     app.run(debug=True)
-
-
