@@ -10,15 +10,14 @@ import matplotlib.pyplot as plt
 firebase = firebase.FirebaseApplication('https://daryltan-9eddf.firebaseio.com/', None)
 
 cred = credentials.Certificate('cred/daryltan-9eddf-firebase-adminsdk-gj8gk-a7e6e9d435.json')
-# cred = credentials.Certificate('cred/daryltan-9eddf-firebase-adminsdk-gj8gk-a7e6e9d435.json')
 default_app = firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://daryltan-9eddf.firebaseio.com/'
 })
+root = db.reference()
 
 class MrtCrowded(Form):
     x = SelectField('Which MRT',[validators.DataRequired()],choices=[("Admiralty","Admiralty"),("Yishun","Yishun")])
     y = SelectField('Which Carriage',[validators.DataRequired()],choices=[("Door 1-4", "Door 1-4"), ("Door 5-8", "Door 5-8")])
-root = db.reference()
 
 app = Flask(__name__)
 

@@ -20,9 +20,23 @@ h2,h3 {
     margin:0 auto;
 }
 
-a,a:hover {
-    color:#563d7c;
-    text-decoration:none;
+
+li a:hover{
+	background-color: black;
+	color: palevioletred;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;
+}
+
+.mg{
+	display:block;
+	padding:6px 5px;
+	text-align:center;
+	text-decoration:none;
+	color:lawngreen;
+	font-size:15px;
+
 }
 
 img{
@@ -71,7 +85,3 @@ header {
     text-align:center;
     text-transform:uppercase;
 }
-
-}
-
-
